@@ -49,7 +49,8 @@ export default function Accueil(): React.JSX.Element {
             className="text-accent underline hover:no-underline focus:no-underline"
           >
             GitHub
-          </a>.
+          </a>
+          .
         </p>
       </section>
     </main>

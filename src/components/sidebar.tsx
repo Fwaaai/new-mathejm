@@ -11,12 +11,12 @@ export default function Sidebar(): React.JSX.Element {
     },
     {
       title: "Chapitre 1 — Polynômes du second degré",
-      link: "/chapitres/chapitre-1"  
+      link: "/chapitres/chapitre-1",
     },
     {
       title: "Chapitre 2 — Notion de dérivée et équation de la tangente",
-      link: "/chapitres/chapitre-2"
-    }
+      link: "/chapitres/chapitre-2",
+    },
   ];
   return (
     <aside

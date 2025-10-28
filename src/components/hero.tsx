@@ -1,15 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function Hero():React.JSX.Element {
+export default function Hero(): React.JSX.Element {
   return (
     <header className="intro">
-      <p className="intro-eyebrow">
-        Bienvenue
-      </p>
-      <h1 className="intro-title">
-        Révisions pour spé mathématiques
-      </h1>
+      <p className="intro-eyebrow">Bienvenue</p>
+      <h1 className="intro-title">Révisions pour spé mathématiques</h1>
       <p className="intro-lead">
         Ce site accompagne les élèves à atteindre les objectifs pédagogiques
         pour les chapitres.

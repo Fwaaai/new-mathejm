@@ -28,6 +28,4 @@
   .breadcrumb {
     @apply flex items-center gap-2 text-sm text-muted mt-6;
   }
-  
-  
 }
