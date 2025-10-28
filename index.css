@@ -28,4 +28,10 @@
   .breadcrumb {
     @apply flex items-center gap-2 text-sm text-muted mt-6;
   }
+  .prim-btn {
+    @apply self-start inline-flex items-center justify-center rounded-full bg-accent text-white font-semibold no-underline shadow-[0_16px_32px_rgba(47,60,190,0.35)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_44px_rgba(47,60,190,0.4)] focus:-translate-y-0.5 focus:shadow-[0_22px_44px_rgba(47,60,190,0.4)];
+  }
+  .scnd-btn {
+    @apply self-start inline-flex items-center justify-center rounded-full border-2 border-[rgba(47,60,190,0.4)] text-accent font-semibold no-underline hover:bg-[rgba(47,60,190,0.08)] focus:bg-[rgba(47,60,190,0.08)];
+  }
 }
