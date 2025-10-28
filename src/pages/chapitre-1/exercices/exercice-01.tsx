@@ -10,10 +10,10 @@ export default function Exercise01(): React.JSX.Element {
           <span className="breadcrumb__separator" aria-hidden="true">›</span>
           <Link to="/chapitres/chapitre-1">Chapitre 1</Link>
           <span className="breadcrumb__separator" aria-hidden="true">›</span>
-          <span className="breadcrumb__current">Exercice 01 - Forme développée</span>
+          <span className="breadcrumb__current">Exercice 1 - Forme développée</span>
         </nav>
         <h1 className="intro-title">Forme développée</h1>
-        <p className="intro-lead">Exercice 01 du Chapitre 1</p>
+        <p className="intro-lead">Exercice 1 du Chapitre 1</p>
       </header>
 
       <div className="mt-10 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
