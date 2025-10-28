@@ -1,12 +1,5 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import NotFound from "./NotFound";
-import { type SectionContent } from "../content/chapitre-1/section01";
-
-// Import all section content
-import section01 from "../content/chapitre-1/section01";
-
-const sections = [section01]; // Add other sections as you create them
 
 export default function Section(): React.JSX.Element {
   const { sectionId } = useParams();
@@ -108,7 +101,12 @@ export default function Section(): React.JSX.Element {
   }, [sectionId]);
 
   if (!sectionDetails) {
-    return <NotFound />;
+    return <div className = "m-auto bg-surface text-5xl rounded-4xl p-10">
+      404 Page non trouvée
+      <br></br>
+      <span className = "text-2xl">Retournez sur le site:
+      <Link to="/" className="prim-btn py-3 px-4 m-4">Vers l'Accueil </Link></span>
+      </div>;
   }
 
   return (
@@ -130,50 +128,7 @@ export default function Section(): React.JSX.Element {
       </header>
 
       <div className="mt-10 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
-        {/* Théorie */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Théorie</h2>
-          <div className="prose max-w-none">
-            {section01.content.theory.split('\n').map((line, i) => (
-              <p key={i} className="mb-2">{line}</p>
-            ))}
-          </div>
-        </section>
-
-        {/* Exemples */}
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Exemples</h2>
-          <div className="space-y-6">
-            {section01.content.examples.map((example, i) => (
-              <div key={i} className="p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold mb-2">Exemple {i + 1}: {example.problem}</h3>
-                <div className="prose max-w-none">
-                  {example.solution.split('\n').map((line, j) => (
-                    <p key={j} className="mb-2">{line}</p>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Exercices */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Exercices</h2>
-          <div className="space-y-6">
-            {section01.content.exercises.map((exercise, i) => (
-              <div key={i} className="p-4 bg-gray-50 rounded-lg">
-                <h3 className="font-semibold mb-2">Exercice {i + 1}: {exercise.problem}</h3>
-                <button 
-                  className="mt-2 text-accent hover:underline"
-                  onClick={() => alert(exercise.solution)}
-                >
-                  Voir la solution
-                </button>
-              </div>
-            ))}
-          </div>
-        </section>
+        {/* Section content will go here */}
       </div>
     </main>
   );
