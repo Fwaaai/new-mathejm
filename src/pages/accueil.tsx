@@ -34,6 +34,24 @@ export default function Accueil(): React.JSX.Element {
           plusieurs sections pour chaque objectif pédagogique.
         </p>
       </section>
+
+      <section className="mt-14 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
+        <h2 className="mt-0 mb-4 text-2xl font-semibold">
+          Code source du site
+        </h2>
+        <p className="m-0 text-muted leading-8">
+          Si vous souhaitez consulter le code source de ce site, il est
+          disponible sur{" "}
+          <a
+            href="https://github.com/Fwaaai/new-mathejm"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent underline hover:no-underline focus:no-underline"
+          >
+            GitHub
+          </a>.
+        </p>
+      </section>
     </main>
   );
 }
