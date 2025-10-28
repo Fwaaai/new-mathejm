@@ -13,4 +13,21 @@
   .sidebar-item {
     @apply no-underline font-medium px-4 py-3 rounded-xl text-text bg-[rgba(47,60,190,0.06)] transition hover:bg-[rgba(47,60,190,0.16)] hover:text-accent focus:bg-[rgba(47,60,190,0.16)] focus:text-accent outline-none;
   }
+  .intro {
+    @apply bg-surface rounded-2xl p-10 shadow-[0_18px_60px_rgba(31,35,53,0.12)] flex flex-col gap-4;
+  }
+  .intro-eyebrow {
+    @apply m-0 uppercase text-[0.75rem] tracking-[0.16em] text-accent;
+  }
+  .intro-title {
+    @apply m-0 text-3xl font-bold;
+  }
+  .intro-lead {
+    @apply m-0 text-[1.05rem] leading-8 text-muted;
+  }
+  .breadcrumb {
+    @apply flex items-center gap-2 text-sm text-muted mt-6;
+  }
+  
+  
 }
