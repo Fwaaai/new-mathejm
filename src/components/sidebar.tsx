@@ -1,6 +1,8 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 export default function Sidebar(): React.JSX.Element {
+  const location = useLocation();
 
   const chapters = [
     {
@@ -9,11 +11,11 @@ export default function Sidebar(): React.JSX.Element {
     },
     {
       title: "Chapitre 1 — Polynômes du second degré",
-      link: "/chapters/chapitre-1"  
+      link: "/chapitres/chapitre-1"  
     },
     {
       title: "Chapitre 2 — Notion de dérivée et équation de la tangente",
-      link: "/chapters/chapitre-2"
+      link: "/chapitres/chapitre-2"
     }
   ];
   return (
@@ -66,10 +68,18 @@ export default function Sidebar(): React.JSX.Element {
         <p className="m-0 text-[1.125rem] font-semibold">Chapitres</p>
 
         <nav className="flex flex-col gap-3">
-          {chapters.map ((chapter) => (
-            <a key={chapter.title} href={chapter.link} className="sidebar-item">
+          {chapters.map((chapter) => (
+            <Link
+              key={chapter.title}
+              to={chapter.link}
+              className={`sidebar-item transition-colors ${
+                location.pathname === chapter.link
+                  ? "bg-[rgba(47,60,190,0.08)] text-accent"
+                  : "hover:bg-[rgba(47,60,190,0.04)] hover:text-accent"
+              }`}
+            >
               {chapter.title}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
