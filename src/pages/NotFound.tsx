@@ -6,7 +6,7 @@ export default function NotFound(): React.JSX.Element {
     // Outer container to take full height and center content
     <div className="min-h-screen w-full flex items-center justify-center">
       {/* Content container */}
-      <div className="bg-surface text-5xl rounded-4xl p-10 text-center text-red-900">
+      <div className="surfaces text-5xl rounded-4xl p-10 text-center text-red-900">
         404 Page non trouvée
         <br />
         <span className="text-2xl block mt-4">
