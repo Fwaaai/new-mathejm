@@ -1,1 +1,16 @@
 @import "tailwindcss";
+
+@theme {
+  --color-background: #f5f6fb;
+  --color-text: #1b1b23;
+  --color-muted: #616174;
+  --color-accent: #2f3cbe;
+  --color-border: rgba(47, 60, 190, 0.12);
+  --color-surface: #ffffff;
+}
+
+@layer components {
+  .sidebar-item {
+    @apply no-underline font-medium px-4 py-3 rounded-xl text-text bg-[rgba(47,60,190,0.06)] transition hover:bg-[rgba(47,60,190,0.16)] hover:text-accent focus:bg-[rgba(47,60,190,0.16)] focus:text-accent outline-none;
+  }
+}
