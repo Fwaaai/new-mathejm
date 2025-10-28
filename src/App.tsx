@@ -2,8 +2,10 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 import Accueil from "./pages/accueil";
-import Chap1 from "./pages/chap1";
+import ChapterRenderer from "./pages/ChapterRenderer";
 import NotFound from "./pages/NotFound";
+import SectionRenderer from "./pages/sectionRenderer";
+import ExerciseRenderer from "./pages/exerciseRenderer";
 
 export default function App(): React.JSX.Element {
   return (
@@ -12,8 +14,10 @@ export default function App(): React.JSX.Element {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Accueil />} />
-          <Route path="/chapitres/chapitre-1/*" element={<Chap1 />}>
+          <Route path="/chapitres/:chapterId" element={<ChapterRenderer  />}>
           </Route>
+          <Route path="/chapitres/:chapterId/sections/:sectionId" element={<SectionRenderer />} />
+          <Route path="/chapitres/:chapterId/exercices/:exerciseId" element={<ExerciseRenderer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
