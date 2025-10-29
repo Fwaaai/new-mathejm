@@ -4,7 +4,7 @@ import Sidebar from "./components/sidebar";
 import Accueil from "./pages/accueil";
 import ChapterPage from "./pages/ChapterPage";
 import NotFound from "./pages/NotFound";
-import SectionRenderer from "./pages/sectionRenderer";
+import SectionPage from "./pages/sectionPage";
 import ExerciseRenderer from "./pages/exerciseRenderer";
 
 export default function App(): React.JSX.Element {
@@ -16,7 +16,7 @@ export default function App(): React.JSX.Element {
           <Route path="/" element={<Accueil />} />
           <Route path="/chapitres/:chapterId" element={<ChapterPage />}>
           </Route>
-          <Route path="/chapitres/:chapterId/sections/:sectionId" element={<SectionRenderer />} />
+          <Route path="/chapitres/:chapterId/sections/:sectionId" element={<SectionPage />} />
           <Route path="/chapitres/:chapterId/exercices/:exerciseId" element={<ExerciseRenderer />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
@@ -24,4 +24,3 @@ export default function App(): React.JSX.Element {
     </div>
   );
 }
-  
