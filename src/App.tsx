@@ -2,7 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Sidebar from "./components/sidebar";
 import Accueil from "./pages/accueil";
-import ChapterRenderer from "./pages/ChapterRenderer";
+import ChapterPage from "./pages/ChapterPage";
 import NotFound from "./pages/NotFound";
 import SectionRenderer from "./pages/sectionRenderer";
 import ExerciseRenderer from "./pages/exerciseRenderer";
@@ -14,7 +14,7 @@ export default function App(): React.JSX.Element {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Accueil />} />
-          <Route path="/chapitres/:chapterId" element={<ChapterRenderer  />}>
+          <Route path="/chapitres/:chapterId" element={<ChapterPage />}>
           </Route>
           <Route path="/chapitres/:chapterId/sections/:sectionId" element={<SectionRenderer />} />
           <Route path="/chapitres/:chapterId/exercices/:exerciseId" element={<ExerciseRenderer />} />
@@ -24,3 +24,4 @@ export default function App(): React.JSX.Element {
     </div>
   );
 }
+  

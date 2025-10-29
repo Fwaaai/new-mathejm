@@ -12,3 +12,7 @@ export const chaptersMeta = [
     lead: "Retrouvez ici les sections pour le deuxième chapitre."
   }
 ];
+
+export function getChapterBySlug(slug: string) {
+  return chaptersMeta.find((chapter) => chapter.slug === slug);
+}

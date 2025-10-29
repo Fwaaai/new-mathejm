@@ -1,30 +1,18 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { chaptersMeta }  from "../data/chapters.ts";
+import { getChapterBySlug }  from "../data/chapters.ts";
 import  NotFound  from "./NotFound.tsx";
-type ChapterModule = { default: React.ComponentType };
-
-const chapterModules = import.meta.glob<ChapterModule>("/src/data/chapters/chapter*/index.tsx", { eager: true });
+import ChapterRenderer from "../utils/renderers/chapterRenderer.tsx";
 
 
-const chapterById: Record<string, React.ComponentType> = Object.fromEntries(
-  Object.entries(chapterModules).map(([path, mod]) => {
-    const id = path.match(/chapter(\d+)\/index\.tsx$/)?.[1] ?? "";
-    return [id, mod.default];
-  })
-);
-
-export default function ChapterRenderer(): React.JSX.Element {
+export default function ChapterPage(): React.JSX.Element {
   const { chapterId } = useParams();
-  const chapterMeta = chaptersMeta.find((chapter) => chapter.slug === chapterId);
+  const chapterMeta = getChapterBySlug(chapterId || "");
   if (!chapterMeta) {
     return <NotFound />;
   }
 
-  const ChapterComponent = chapterById[chapterMeta.id];
-  if (!ChapterComponent) {
-    return <NotFound />;
-  }
+
   return (
     <main className="min-h-screen bg-background text-text mx-auto max-w-[860px] ml-16 px-6 pt-16 pb-20 sm:ml-0 sm:px-4 sm:pt-8">
       <header className="intro">
@@ -34,7 +22,7 @@ export default function ChapterRenderer(): React.JSX.Element {
           {chapterMeta?.lead}
         </p>
         <nav className="breadcrumb" aria-label="Fil d'Ariane">
-          <Link to="/">Accueil</Link>
+          <Link className="hover:text-accent"to="/">Accueil</Link>
           <span className="breadcrumb-separator" aria-hidden="true">
             ›
           </span>
@@ -42,7 +30,7 @@ export default function ChapterRenderer(): React.JSX.Element {
         </nav>
       </header>
 
-      <ChapterComponent />
+      <ChapterRenderer chapterNumber={Number(chapterMeta.id)} />
     </main>
   );
 }
