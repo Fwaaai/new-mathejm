@@ -9,6 +9,13 @@
   --color-surface: #ffffff;
 }
 
+@layer base {
+  ol {
+    list-style-position: outside;
+    margin-left: 1.5rem;
+  }
+}
+
 @layer components {
   .sidebar-item {
     @apply no-underline font-medium px-4 py-3 rounded-xl text-text bg-[rgba(47,60,190,0.06)] transition hover:bg-[rgba(47,60,190,0.16)] hover:text-accent focus:bg-[rgba(47,60,190,0.16)] focus:text-accent outline-none;
@@ -36,5 +43,20 @@
   }
   .surfaces{
     @apply mt-14 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)];
+  }
+  .list-1 {
+    @apply list-decimal
+  }
+  .list-a {
+    @apply list-[lower-alpha]
+  }
+  .list-i {
+    @apply list-[lower-roman]
+  }
+  .list-upper-i {
+    @apply list-[upper-roman]
+  }
+  .list-upper-a {
+    @apply list-[upper-alpha]
   }
 }
