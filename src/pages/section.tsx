@@ -101,12 +101,18 @@ export default function Section(): React.JSX.Element {
   }, [sectionId]);
 
   if (!sectionDetails) {
-    return <div className = "m-auto bg-surface text-5xl rounded-4xl p-10">
-      404 Page non trouvée
-      <br></br>
-      <span className = "text-2xl">Retournez sur le site:
-      <Link to="/" className="prim-btn py-3 px-4 m-4">Vers l'Accueil </Link></span>
-      </div>;
+    return (
+      <div className="m-auto bg-surface text-5xl rounded-4xl p-10">
+        404 Page non trouvée
+        <br></br>
+        <span className="text-2xl">
+          Retournez sur le site:
+          <Link to="/" className="prim-btn py-3 px-4 m-4">
+            Vers l'Accueil{" "}
+          </Link>
+        </span>
+      </div>
+    );
   }
 
   return (

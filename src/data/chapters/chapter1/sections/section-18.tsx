@@ -1,8 +1,8 @@
 import React from "react";
-import { BlockMath, InlineMath} from "react-katex";
-import "katex/dist/katex.min.css";  
+import { BlockMath, InlineMath } from "react-katex";
+import "katex/dist/katex.min.css";
 
-export default function Section4 (): React.JSX.Element {
+export default function Section4(): React.JSX.Element {
   return (
     <div className="surfaces">
       <section className="section">
@@ -11,10 +11,16 @@ export default function Section4 (): React.JSX.Element {
         <p>On considère une équation du type :</p>
         <BlockMath math="ax^2 + bx + c = 0" />
         <p>
-          où <InlineMath math="a" />, <InlineMath math="b" />, et <InlineMath math="c" /> dépendent d’un paramètre, souvent noté <InlineMath math="m" />.
+          où <InlineMath math="a" />, <InlineMath math="b" />, et{" "}
+          <InlineMath math="c" /> dépendent d’un paramètre, souvent noté{" "}
+          <InlineMath math="m" />.
         </p>
 
-        <p>On calcule alors le discriminant <InlineMath math="\Delta" /> en fonction de <InlineMath math="m" />, soit <InlineMath math="\Delta(m)" />.</p>
+        <p>
+          On calcule alors le discriminant <InlineMath math="\Delta" /> en
+          fonction de <InlineMath math="m" />, soit{" "}
+          <InlineMath math="\Delta(m)" />.
+        </p>
 
         <p>On discute ensuite les cas suivants :</p>
 
@@ -22,7 +28,9 @@ export default function Section4 (): React.JSX.Element {
           <li>
             <strong>Cas 1 :</strong> <InlineMath math="\Delta(m) > 0" /> <br />
             L'équation admet deux solutions réelles distinctes : <br />
-            <BlockMath math={String.raw`x_1 = \frac{-b - \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}`} />
+            <BlockMath
+              math={String.raw`x_1 = \frac{-b - \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b + \sqrt{\Delta}}{2a}`}
+            />
           </li>
 
           <li>

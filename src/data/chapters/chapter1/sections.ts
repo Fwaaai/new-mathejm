@@ -1,12 +1,52 @@
 export const sections = [
-  { id: "1", slug: "section-01", number: "Section 1", title: "Forme développée" },
-  { id: "2", slug: "section-02", number: "Section 2", title: "Coordonnées du sommet (forme développée)" },
-  { id: "3", slug: "section-03", number: "Section 3", title: "Axe de symétrie (forme développée)" },
-  { id: "4", slug: "section-04", number: "Section 4", title: "Racines (forme développée)" },
-  { id: "5", slug: "section-05", number: "Section 5", title: "Tableau de variation (forme développée)" },
-  { id: "6", slug: "section-06", number: "Section 6", title: "Tableau de signe (forme développée)" },
-  { id: "7", slug: "section-07", number: "Section 7", title: "Forme canonique" },
-  { id: "8", slug: "section-08", number: "Section 8", title: "Coordonnées du sommet (forme canonique)" },
+  {
+    id: "1",
+    slug: "section-01",
+    number: "Section 1",
+    title: "Forme développée",
+  },
+  {
+    id: "2",
+    slug: "section-02",
+    number: "Section 2",
+    title: "Coordonnées du sommet (forme développée)",
+  },
+  {
+    id: "3",
+    slug: "section-03",
+    number: "Section 3",
+    title: "Axe de symétrie (forme développée)",
+  },
+  {
+    id: "4",
+    slug: "section-04",
+    number: "Section 4",
+    title: "Racines (forme développée)",
+  },
+  {
+    id: "5",
+    slug: "section-05",
+    number: "Section 5",
+    title: "Tableau de variation (forme développée)",
+  },
+  {
+    id: "6",
+    slug: "section-06",
+    number: "Section 6",
+    title: "Tableau de signe (forme développée)",
+  },
+  {
+    id: "7",
+    slug: "section-07",
+    number: "Section 7",
+    title: "Forme canonique",
+  },
+  {
+    id: "8",
+    slug: "section-08",
+    number: "Section 8",
+    title: "Coordonnées du sommet (forme canonique)",
+  },
   {
     id: "9",
     slug: "section-09",
@@ -32,7 +72,6 @@ export const sections = [
     title: "Tableau de signe (forme canonique)",
   },
   {
-
     id: "13",
     slug: "section-13",
     number: "Section 13",
@@ -51,7 +90,7 @@ export const sections = [
     title: "Résolution avec changement de variable",
   },
   {
-      id: "16",
+    id: "16",
     slug: "section-16",
     number: "Section 16",
     title: "Factorisation d’un polynôme de degré 3 connaissant une racine",

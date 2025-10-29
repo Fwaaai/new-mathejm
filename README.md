@@ -1,6 +1,6 @@
 # Maths EJM (Vite + React + TS)
 
-A small Single‑Page Application (SPA) to host math revision content. Built with Vite, React, TypeScript, Tailwind CSS, and React Router. There is no backend; everything is rendered client‑side. No cookies or localStorage are used.
+A small Single‑Page Application (SPA) to host math revision content. Built with Vite, React, TypeScript, Tailwind CSS, and React Router. There is no backend; everything renders client‑side. No cookies or localStorage are used.
 
 ## Tech Stack
 
@@ -37,39 +37,40 @@ The app serves at the URL shown by Vite (typically http://localhost:5173).
 
 ```
 .
-├─ public/                  # Static assets copied as‑is
+├─ public/                       # Static assets copied as‑is
 ├─ src/
-│  ├─ assets/               # App assets (if any)
-│  ├─ components/           # Reusable UI (e.g., sidebar, hero)
-│  ├─ data/                 # Content metadata and chapter files
-│  │  ├─ chapters.ts        # Global chapter metadata (id, slug, title, lead)
+│  ├─ assets/
+│  │  └─ img/                   # Images used in content
+│  ├─ components/               # Reusable UI (e.g., sidebar, hero)
+│  ├─ data/                     # Content metadata and chapter files
+│  │  ├─ chapters.ts            # Global chapter metadata (id, slug, title, lead)
 │  │  └─ chapters/
 │  │     ├─ chapter1/
-│  │     │  ├─ index.tsx    # Chapter 1 index page (list of sections)
-│  │     │  ├─ sections.ts  # Chapter 1 sections metadata
+│  │     │  ├─ index.tsx        # Chapter 1 index page (list of sections)
+│  │     │  ├─ sections.ts      # Chapter 1 sections metadata (slugs, labels)
+│  │     │  ├─ exercises/       # Exercises (WIP)
 │  │     │  └─ sections/
-│  │     │     └─ section-1.tsx  # Example section component
+│  │     │     ├─ section-1.tsx # Section components (non‑padded numbers)
+│  │     │     └─ ...
 │  │     └─ chapter2/
-│  │        └─ index.tsx
-│  ├─ pages/                # Route components (Accueil, ChapterPage, NotFound, etc.)
+│  │        └─ index.tsx        # Placeholder
+│  ├─ pages/                    # Route components (Accueil, ChapterPage, NotFound, etc.)
 │  ├─ utils/
-│  │  ├─ loaders/           # Dynamic import helpers (chapters/sections)
-│  │  └─ renderers/         # Async renderers that use the loaders
-│  ├─ App.tsx               # Routes and layout
-│  └─ main.tsx              # App bootstrap
-├─ index.css                # Tailwind layer + theme tokens
-├─ index.html               # Root HTML
-├─ vite.config.ts           # Vite + React + Tailwind plugins
+│  │  ├─ loaders/               # Dynamic import helpers (chapters/sections)
+│  │  └─ renderers/             # Async renderers that use the loaders
+│  ├─ App.tsx                   # Routes and layout
+│  └─ main.tsx                  # App bootstrap
+├─ index.css                    # Tailwind layer + theme tokens
+├─ index.html                   # Root HTML
+├─ vite.config.ts               # Vite + React + Tailwind plugins
 └─ package.json
 ```
 
 ## Routing
 
-The app uses React Router with the following routes:
-
 - `/` — Accueil (home)
-- `/chapitres/:chapterId` — Chapter page (e.g., `chapitre-1`)
-- `/chapitres/:chapterId/sections/:sectionId` — Section page
+- `/chapitres/:chapterId` — Chapter page; `:chapterId` is a slug (e.g., `chapitre-1`)
+- `/chapitres/:chapterId/sections/:sectionId` — Section page; `:sectionId` is a slug (e.g., `section-01`)
 - `/chapitres/:chapterId/exercices/:exerciseId` — Exercise page (WIP)
 
 Chapter and section metadata live under `src/data`. Chapter pages use `chapters.ts` to look up the chapter by its `slug`.
@@ -85,7 +86,9 @@ export const chaptersMeta = [
 ];
 ```
 
-Chapter 1 also has a `sections.ts` file that lists its sections with slugs (e.g., `section-01`, `section-02`, …) used for navigation. The actual section content is implemented as React components under `src/data/chapters/chapterN/sections/section-*.tsx`.
+Chapter 1 also has a `sections.ts` file that lists its sections with slugs (e.g., `section-01`, `section-02`, …) used for routing. The actual section content is implemented as React components under `src/data/chapters/chapterN/sections/section-*.tsx`.
+
+Important: slugs are zero‑padded (e.g., `section-01`), but filenames are not (`section-1.tsx`, `section-2.tsx`, …). Filenames must use non‑padded numbers to match the dynamic import convention.
 
 ### Dynamic Loading (by Convention)
 
@@ -94,9 +97,9 @@ The app includes helpers that lazy‑load chapter and section components using `
 - Chapters: `src/utils/loaders/chapterLoader.ts` matches `src/data/chapters/chapter*/index.tsx`
 - Sections: `src/utils/loaders/sectionLoader.ts` matches `src/data/chapters/chapter*/sections/section-*.tsx`
 
-Renderers in `src/utils/renderers/` resolve components at runtime given a chapter/section number and show a loading or not‑found state accordingly.
+Renderers in `src/utils/renderers/` resolve components at runtime given a numeric chapter/section (derived from metadata `id`) and show a loading or not‑found state accordingly.
 
-Note: The route‑level `pages/sectionPage.tsx` currently uses the metadata approach (slugs) and is a WIP. The utilities under `utils/` demonstrate the intended dynamic import pattern by numeric chapter/section ids.
+Note: The route‑level `pages/sectionPage.tsx` uses slugs from the chapter’s `sections.ts` but renders content via the numeric dynamic loader/renderer. Chapter 2 is currently a placeholder.
 
 ### Adding a New Chapter
 
@@ -108,10 +111,10 @@ Note: The route‑level `pages/sectionPage.tsx` currently uses the metadata appr
 
 ### Adding a New Section
 
-1. Under the chapter folder, add a file named `src/data/chapters/chapterN/sections/section-X.tsx` where `X` is your section number (e.g., `section-1.tsx`).
+1. Under the chapter folder, add a file named `src/data/chapters/chapterN/sections/section-X.tsx` where `X` is your section number without leading zeros (e.g., `section-1.tsx`).
 2. If using metadata‑driven navigation (Chapter 1 style), add an entry to that chapter’s `sections.ts` with:
    - `id` (string), `slug` (e.g., `section-01`), `number` (label), `title` (display)
-3. Ensure your routes link to `/chapitres/chapitre-N/sections/<section-slug>`.
+3. Ensure your routes link to `/chapitres/chapitre-N/sections/<section-slug>` (e.g., `/chapitres/chapitre-1/sections/section-01`).
 
 ## Styling
 
@@ -135,7 +138,14 @@ In components, you can use `react-katex` components like `<InlineMath />` and `<
 - The sidebar currently lists a fixed set of chapters; update it if you add new chapters.
 - If deploying under a subpath (e.g., GitHub Pages), set Vite’s `base` option accordingly.
 
+Known current status:
+
+- Chapter 2 is a placeholder page.
+- The exercises route renders a stub page for now.
+- `src/pages/section.tsx` exists as a legacy stub and is not wired in the router; the app uses `src/pages/sectionPage.tsx`.
+
 ## License
 
-This project is released under the MIT License. See `LICENSE` for details.
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See `LICENSE` for the full text.
 
+Note: If you run a modified version of this app as a network service, the AGPL requires that you make the corresponding source code available to the users of that service.

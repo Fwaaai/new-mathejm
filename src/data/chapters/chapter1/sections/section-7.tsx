@@ -1,20 +1,24 @@
 import React from "react";
 import { BlockMath, InlineMath } from "react-katex";
-import "katex/dist/katex.min.css";  
+import "katex/dist/katex.min.css";
 import graph5 from "/src/assets/img/graphs/graph5.png";
 
-export default function Section4 (): React.JSX.Element {
+export default function Section4(): React.JSX.Element {
   return (
     <div className="surfaces">
       <section className="section">
         <h2 className="text-2xl font-bold">Méthodes et exemples</h2>
         <ol className="list-1">
           <li>
-            <h3 className="text-xl font-semibold p-2">À partir des autres formes</h3>
+            <h3 className="text-xl font-semibold p-2">
+              À partir des autres formes
+            </h3>
 
             <ol type="a" className="list list-a">
               <li>
-                <h4 className="text-lg p-1 font-semibold">À partir de la forme développée</h4>
+                <h4 className="text-lg p-1 font-semibold">
+                  À partir de la forme développée
+                </h4>
                 <p>Prenons un exemple :</p>
                 <BlockMath math="f(x) = -x^2 + 4x + 5" />
                 <p>On utilise la formule de la forme canonique :</p>
@@ -33,25 +37,30 @@ export default function Section4 (): React.JSX.Element {
               </li>
 
               <li>
-                <h4 className="text-lg p-1 font-semibold">À partir de la forme factorisée</h4>
+                <h4 className="text-lg p-1 font-semibold">
+                  À partir de la forme factorisée
+                </h4>
                 <p>
                   Si la fonction est donnée sous forme factorisée :
                   <BlockMath math="f(x) = a(x - x_1)(x - x_2)" />
                   On peut retrouver la forme canonique en procédant ainsi :
                 </p>
                 <p>
-                  On calcule la demi-somme des racines pour trouver l’abscisse du sommet :
+                  On calcule la demi-somme des racines pour trouver l’abscisse
+                  du sommet :
                   <BlockMath math="\alpha = \frac{x_1 + x_2}{2}" />
                   On calcule ensuite :
                   <BlockMath math="\beta = f(\alpha)" />
                   On obtient alors la forme canonique :
                   <BlockMath math="f(x) = a(x - \alpha)^2 + \beta" />
                 </p>
-                <br /><br />
+                <br />
+                <br />
                 <p>Par exemple :</p>
                 <BlockMath math="f(x) = 2(x - 1)(x - 5)" />
                 <p>
-                  Les racines sont <InlineMath math="x_1 = 1" /> et <InlineMath math="x_2 = 5" /> <br />
+                  Les racines sont <InlineMath math="x_1 = 1" /> et{" "}
+                  <InlineMath math="x_2 = 5" /> <br />
                   Donc :
                   <BlockMath math="\alpha = \frac{1 + 5}{2} = 3" />
                 </p>
@@ -68,14 +77,24 @@ export default function Section4 (): React.JSX.Element {
           </li>
 
           <li>
-            <h3 className="text-xl font-semibold p-2">À partir d’un graphique</h3>
-            <img src={graph5} className="img" alt="Graphique d'une parabole avec sommet S et point P" />
+            <h3 className="text-xl font-semibold p-2">
+              À partir d’un graphique
+            </h3>
+            <img
+              src={graph5}
+              className="img"
+              alt="Graphique d'une parabole avec sommet S et point P"
+            />
             <p>
-              Supposons qu’on connaisse le sommet de la parabole <InlineMath math="S(2,9)" /> et un autre point <InlineMath math="P(0,5)" /> par lecture graphique.
+              Supposons qu’on connaisse le sommet de la parabole{" "}
+              <InlineMath math="S(2,9)" /> et un autre point{" "}
+              <InlineMath math="P(0,5)" /> par lecture graphique.
             </p>
             <p>On utilise la forme canonique :</p>
             <BlockMath math="f(x) = a(x - \alpha)^2 + \beta" />
-            <p>On remplace avec les coordonnées de <InlineMath math="P(0,5)" /> :</p>
+            <p>
+              On remplace avec les coordonnées de <InlineMath math="P(0,5)" /> :
+            </p>
             <BlockMath
               math={String.raw`
                 \begin{aligned}
