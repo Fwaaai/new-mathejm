@@ -5,7 +5,7 @@ import Accueil from "./pages/accueil";
 import ChapterPage from "./pages/ChapterPage";
 import NotFound from "./pages/NotFound";
 import SectionPage from "./pages/sectionPage";
-import ExerciseRenderer from "./pages/exerciseRenderer";
+import ExercisePage from "./pages/exercisePage";
 
 export default function App(): React.JSX.Element {
   return (
@@ -20,8 +20,8 @@ export default function App(): React.JSX.Element {
             element={<SectionPage />}
           />
           <Route
-            path="/chapitres/:chapterId/exercices/:exerciseId"
-            element={<ExerciseRenderer />}
+            path="/chapitres/:chapterId/exercices/:sectionId"
+            element={<ExercisePage />}
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
