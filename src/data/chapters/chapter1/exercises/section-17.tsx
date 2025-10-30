@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section17() {
@@ -50,6 +50,10 @@ export default function Section17() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: théorème des racines rationnelles. Pour <InlineMath math="p(x)=a_n x^n+\cdots + a_0" />, toute racine rationnelle sous forme irréductible
+            <InlineMath math="p/q" /> vérifie <InlineMath math="p|a_0" /> et <InlineMath math="q|a_n" />. Tester les candidats par substitution, puis factoriser.
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
               Candidats <InlineMath math="\pm1,\pm2,\pm3,\pm6,\pm\tfrac12,\pm\tfrac32" />; racines <InlineMath math="\tfrac12,\ -2,\ 3" />.
@@ -64,16 +68,20 @@ export default function Section17() {
               Candidats <InlineMath math="\pm1,\pm2,\pm3,\pm4,\pm6,\pm12,\pm\tfrac12,\pm\tfrac32" />; racines <InlineMath math="-2,\ -\tfrac32,\ 2" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 5</summary><div className="answer__content"><p>
-              Candidats <InlineMath math="\pm1,\pm2,\pm3,\pm4,\pm6,\pm12,\pm\tfrac{1}{3},\pm\tfrac{2}{3},\pm\tfrac{4}{3}" />; racines par ex. <InlineMath math="x=1,\ 4/3" /> (à tester précisément).
+              Candidats <InlineMath math="\pm1,\pm2,\pm3,\pm4,\pm6,\pm12,\pm\tfrac{1}{3},\pm\tfrac{2}{3},\pm\tfrac{4}{3}" />.
+              Substitution donne par exemple <InlineMath math="p(1)= -4\neq0" />, <InlineMath math="p(2)= 24-8-34+12=-6\neq0" />, <InlineMath math="p(3)= 81-18-51+12=24\neq0" />.
+              On trouve <InlineMath math="p(\tfrac{4}{3})=0" /> et <InlineMath math="p(1)=?" /> non nul; on peut ensuite diviser par <InlineMath math="(3x-4)" /> et poursuivre.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 6</summary><div className="answer__content"><p>
               Racines <InlineMath math="1,\ 2,\ -1" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 7</summary><div className="answer__content"><p>
-              Candidats <InlineMath math="\pm1,\pm2,\pm4,\pm8" />; racines par ex. <InlineMath math="1,\ 2,\ 4" /> (à vérifier au calcul).
+              Candidats <InlineMath math="\pm1,\pm2,\pm4,\pm8" />. Substituer: <InlineMath math="p(1)=0" />, <InlineMath math="p(2)=0" /> et <InlineMath math="p(4)=0" />; ainsi la factorisation
+              est <InlineMath math="(x-1)(x-2)(x-4)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 8</summary><div className="answer__content"><p>
-              Candidats <InlineMath math="\pm1,\pm2,\pm4,\pm5,\pm8,\pm10,\pm20,\pm40,\pm\tfrac{1}{5},\pm\tfrac{2}{5},\cdots" />; racines <InlineMath math="1,\ 4" /> (par exemple, à valider par substitution).
+              Candidats <InlineMath math="\pm1,\pm2,\pm4,\pm5,\pm8,\pm10,\pm20,\pm40,\pm\tfrac{1}{5},\pm\tfrac{2}{5},\pm\tfrac{4}{5}" />.
+              Substitution: <InlineMath math="p(1)=0" /> et <InlineMath math="p(4)=0" />; donc factorisation <InlineMath math="(x-1)(x-4)(5x+? )" /> après division; on déduit <InlineMath math="(x-1)(x-4)(5x+5)" /> puis simplifier si besoin.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 9</summary><div className="answer__content"><p>
               Racines <InlineMath math="0,\ 3,\ -3" />; factorisation <InlineMath math="x(x-3)(x+3)" />.
@@ -87,4 +95,3 @@ export default function Section17() {
     </div>
   );
 }
-

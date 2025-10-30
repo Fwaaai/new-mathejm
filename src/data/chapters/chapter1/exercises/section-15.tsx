@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section15() {
@@ -50,6 +50,10 @@ export default function Section15() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: poser une nouvelle inconnue (par ex. <InlineMath math="X=x^2" /> ou <InlineMath math="X=x^3" />) pour ramener à un trinôme,
+            résoudre en <InlineMath math="X" />, puis revenir à <InlineMath math="x" /> en tenant compte du domaine (par ex. <InlineMath math="X=x^2\ge0" />).
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
               <InlineMath math="X^2-5X+6=0\Rightarrow X=2,3" /> donc <InlineMath math="x=\pm\sqrt{2},\ \pm\sqrt{3}" />.
@@ -87,4 +91,3 @@ export default function Section15() {
     </div>
   );
 }
-

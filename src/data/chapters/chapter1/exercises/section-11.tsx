@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section11() {
@@ -48,7 +48,13 @@ export default function Section11() {
                 <details className="answer__details">
                   <summary>Exercice {i + 1}</summary>
                   <div className="answer__content">
-                    <p><InlineMath math={it.nature} />; si <InlineMath math="a>0" />: décroît puis croît; si <InlineMath math="a<0" />: croît puis décroît.</p>
+                    <p>
+                      Rappel: <InlineMath math="f(x)=a(x-\alpha)^2+\beta" />. Si <InlineMath math="a>0" />, minimum en
+                      <InlineMath math="x=\alpha" /> de valeur <InlineMath math="\beta" /> et variations « décroît puis croît ».
+                      Si <InlineMath math="a<0" />, maximum en <InlineMath math="x=\alpha" /> de valeur <InlineMath math="\beta" /> et
+                      variations « croît puis décroît ».
+                    </p>
+                    <p><InlineMath math={it.nature} /> (application directe de la règle précédente).</p>
                   </div>
                 </details>
               </li>
@@ -59,4 +65,3 @@ export default function Section11() {
     </div>
   );
 }
-

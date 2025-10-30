@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section18() {
@@ -50,6 +50,10 @@ export default function Section18() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: étudier <InlineMath math="\Delta(m)=b(m)^2-4a(m)c(m)" />. Deux solutions réelles si <InlineMath math="\Delta(m)>0" />, une si <InlineMath math="\Delta(m)=0" />, sinon aucune.
+            Traiter également les cas limites où le coefficient de <InlineMath math="x^2" /> s’annule.
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
               <InlineMath math="\Delta(m)=m^2-4" />: deux si <InlineMath math="|m|>2" />, une si <InlineMath math="|m|=2" />, aucune si <InlineMath math="|m|<2" />.
@@ -87,4 +91,3 @@ export default function Section18() {
     </div>
   );
 }
-

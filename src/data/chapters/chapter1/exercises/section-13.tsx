@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 import graph11 from '/src/assets/img/graphs/graph11.png';
 
@@ -53,12 +53,16 @@ export default function Section13() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: avec racines <InlineMath math="r_1, r_2" />, écrire <InlineMath math="f(x)=a(x-r_1)(x-r_2)" /> et utiliser une valeur donnée
+            pour déterminer <InlineMath math="a" />. En cas de racine double: <InlineMath math="f(x)=a(x-r)^2" />.
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
               <InlineMath math="f(x)=-1\cdot(x+1)(x-5)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 2</summary><div className="answer__content"><p>
-              <InlineMath math="f(x)=a\,x(x-4),\ f(1)=-3\Rightarrow -3=a\cdot1\cdot(-3)\Rightarrow a=1" />, donc <InlineMath math="x(x-4)" />.
+              <InlineMath math="f(x)=a\,x(x-4), f(1)=-3\Rightarrow -3=a\cdot1\cdot(-3)\Rightarrow a=1" />, donc <InlineMath math="f(x)=x(x-4)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 3</summary><div className="answer__content"><p>
               <InlineMath math="f(x)=a(x-2)(x-3)" /> avec <InlineMath math="a\neq0" />.
@@ -79,7 +83,7 @@ export default function Section13() {
               <InlineMath math="f(x)=a(x+1)(x-7),\ f(2)=12\Rightarrow 12=a(3)(-5)=-15a\Rightarrow a=-\tfrac{4}{5}" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 9</summary><div className="answer__content"><p>
-              Une possibilité: <InlineMath math="f(x)=a(x-1)(x-5)" />; on choisit <InlineMath math="a" /> pour obtenir le bon sommet (non demandé précisément).
+              Une possibilité : <InlineMath math="f(x)=a(x-1)(x-5)" />; on choisit <InlineMath math="a" /> pour obtenir le bon sommet (non demandé précisément).
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 10</summary><div className="answer__content"><p>
               <InlineMath math="f(x)=a(x+5)(x+1),\ f(-3)=8\Rightarrow 8=a(2)(-2)=-4a\Rightarrow a=-2" />; donc <InlineMath math="-2(x+5)(x+1)" />.

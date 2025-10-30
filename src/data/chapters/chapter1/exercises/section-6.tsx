@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 import graph9 from '/src/assets/img/graphs/graph9.png';
 
@@ -52,36 +52,48 @@ export default function Section6() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: déterminer d’abord les racines (par Δ, factorisation ou forme canonique), puis utiliser le signe
+            de <InlineMath math="a" />. Pour un trinôme, signe positif à l’extérieur des racines et négatif à l’intérieur si <InlineMath math="a>0" />;
+            l’inverse si <InlineMath math="a<0" />; racine double: signe constant, nul à la racine.
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
-              Racines <InlineMath math="-\tfrac12" /> et <InlineMath math="3" />; <InlineMath math="a<0" /> donc signe: <InlineMath math=": +\; -\; +" /> sur <InlineMath math="(-\infty,-\tfrac12),\ (-\tfrac12,3),\ (3,+\infty)" /> inversé pour <InlineMath math="a<0" />: positif à l’extérieur, négatif entre racines.
+              Équation associée: <InlineMath math="-2x^2+5x+3=0\iff 2x^2-5x-3=0" />. <InlineMath math="\Delta=25+24=49" /> donc
+              <InlineMath math="x=\tfrac{5\pm7}{4}\Rightarrow x=3,\ -\tfrac12" />. Comme <InlineMath math="a=-2<0" />, <InlineMath math="f>0" /> pour <InlineMath math="x\in(-\infty,-\tfrac12)\cup(3,+\infty)" />
+              et <InlineMath math="f<0" /> sur <InlineMath math="(-\tfrac12,3)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 2</summary><div className="answer__content"><p>
-              Racine double <InlineMath math="x=2" />; <InlineMath math="a<0" /> donc <InlineMath math="f\le0" /> pour tout <InlineMath math="x" />, nulle en <InlineMath math="2" />.
+              <InlineMath math="-x^2+4x-4=-(x-2)^2" />: racine double en <InlineMath math="x=2" />. Avec <InlineMath math="a<0" /> et un carré,
+              <InlineMath math="f\le0" /> pour tout <InlineMath math="x" />, et <InlineMath math="f=0" /> uniquement en <InlineMath math="x=2" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 3</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta<0" />, <InlineMath math="a>0" /> donc <InlineMath math=": f>0" /> sur <InlineMath math="\mathbb{R}" />.
+              <InlineMath math="x^2+x+1" />: <InlineMath math="\Delta=1-4=-3<0" /> et <InlineMath math="a=1>0" /> donc <InlineMath math="f>0" /> sur <InlineMath math="\mathbb R" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 4</summary><div className="answer__content"><p>
-              Zéros en 1 et 3, <InlineMath math="a>0" /> donc <InlineMath math=": +\; -\; +" /> (positif hors racines, négatif entre).
+              <InlineMath math="(x-1)(x-3)" />: zéros en 1 et 3, <InlineMath math="a>0" /> donc <InlineMath math="f>0" /> sur <InlineMath math="(-\infty,1)\cup(3,+\infty)" />
+              et <InlineMath math="f<0" /> sur <InlineMath math="(1,3)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 5</summary><div className="answer__content"><p>
-              <InlineMath math="3(x-2)^2 - 3" /> a <InlineMath math=":\Delta=0?" /> En fait racine double en <InlineMath math="x=2" /> après division par 3: <InlineMath math="f=3(x-2)^2+?" /> Plus direct: <InlineMath math="\Delta=(-12)^2-4\cdot3\cdot9=144-108=36" />, racines <InlineMath math="1,3" />; signe <InlineMath math=": +\; -\; +" />.
+              <InlineMath math="3x^2-12x+9=3[(x-2)^2-1]=3(x-3)(x-1)" />. Racines <InlineMath math="1" /> et <InlineMath math="3" />; <InlineMath math="a=3>0" /> donc
+              <InlineMath math="f>0" /> hors <InlineMath math="[1,3]" />, <InlineMath math="f<0" /> sur <InlineMath math="(1,3)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 6</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=4-12<0" />, <InlineMath math="a<0" /> donc <InlineMath math="f<0" /> sur <InlineMath math="\mathbb{R}" />.
+              <InlineMath math="-x^2-2x-3=-(x^2+2x+3)" /> avec <InlineMath math="\Delta=4-12=-8<0" />: pas de racine réelle et
+              <InlineMath math="a<0" /> donc <InlineMath math="f<0" /> sur <InlineMath math="\mathbb R" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 7</summary><div className="answer__content"><p>
-              Racines 2 et 3; <InlineMath math="f>0" /> sur <InlineMath math="(-\infty,2)\cup(3,+\infty)" />, <InlineMath math="f<0" /> sur <InlineMath math="(2,3)" />.
+              <InlineMath math="x^2-5x+6=(x-2)(x-3)" />. Solutions de <InlineMath math=">0" />: <InlineMath math="(-\infty,2)\cup(3,+\infty)" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 8</summary><div className="answer__content"><p>
-              <InlineMath math="-2(x-2)^2\le0" /> pour tout <InlineMath math="x" />; vrai pour tout <InlineMath math="x" />, égalité en <InlineMath math="2" />.
+              <InlineMath math="-2x^2+8x-8=-2(x-2)^2\le0" /> pour tout <InlineMath math="x" />, avec égalité seulement en <InlineMath math="x=2" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 9</summary><div className="answer__content"><p>
-              <InlineMath math="a>0" /> donc <InlineMath math="f>0" /> hors <InlineMath math="[-1,4]" />, <InlineMath math="f<0" /> sur <InlineMath math="(-1,4)" />.
+              Lecture graphique: zéros en <InlineMath math="-1" /> et <InlineMath math="4" /> et <InlineMath math="a>0" />. Donc <InlineMath math="f<0" /> sur <InlineMath math="(-1,4)" />
+              et <InlineMath math="f>0" /> hors <InlineMath math="[-1,4]" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 10</summary><div className="answer__content"><p>
-              Toujours <InlineMath math="\ge 0" />, nul en <InlineMath math="x=-2" />.
+              <InlineMath math="(x+2)^2\ge0" /> pour tout <InlineMath math="x" /> et vaut 0 en <InlineMath math="x=-2" />.
             </p></div></details></li>
           </ol>
         </div>
@@ -89,4 +101,3 @@ export default function Section6() {
     </div>
   );
 }
-

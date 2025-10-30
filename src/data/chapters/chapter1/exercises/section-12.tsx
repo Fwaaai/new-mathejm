@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section12() {
@@ -42,6 +42,11 @@ export default function Section12() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: résoudre <InlineMath math="a(x-\alpha)^2+\beta=0" /> revient à 
+            <InlineMath math="(x-\alpha)^2=-\tfrac{\beta}{a}" />. Il y a deux racines si <InlineMath math="-\tfrac{\beta}{a}>0" />;
+            une racine double si <InlineMath math="\beta=0" />; aucune racine réelle si <InlineMath math="-\tfrac{\beta}{a}<0" />.
+          </p>
           <ol className="answer-list">
             {items.map((it, i) => (
               <li className="answer" key={i}>
@@ -59,4 +64,3 @@ export default function Section12() {
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section4() {
@@ -52,39 +52,43 @@ export default function Section4() {
         <div className="answers" hidden={hidden}>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=4^2-4(-1)(5)=36" /> donc <InlineMath math="x=-1,\ 5" />.
-            </p></div></details></li>
+              Poser <InlineMath math="a=-1,\ b=4,\ c=5" />. Discriminant <InlineMath math="\Delta=b^2-4ac=16-4(-1)\cdot5=36" />.</p>
+              <p>Deux racines: <InlineMath math="x=\tfrac{-b\pm\sqrt\Delta}{2a}=\tfrac{-4\pm6}{-2}\Rightarrow x=-1,\ 5" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 2</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=0" /> racine double <InlineMath math="x=1" />.
-            </p></div></details></li>
+              <InlineMath math="a=1,\ b=-2,\ c=1" />. <InlineMath math="\Delta=(-2)^2-4\cdot1\cdot1=0" /> donc une racine double en <InlineMath math="x=\tfrac{-b}{2a}=1" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 3</summary><div className="answer__content"><p>
-              <InlineMath math="a+b+c=0" /> donc <InlineMath math="x_1=1,\ x_2=\tfrac{c}{a}=\tfrac{1}{2}" />.
-            </p></div></details></li>
+              Astuce: si <InlineMath math="a+b+c=0" />, alors <InlineMath math="x=1" /> est racine et l’autre vaut <InlineMath math="\tfrac{c}{a}" />.</p>
+              <p>Ici <InlineMath math="2-3+1=0" /> donc <InlineMath math="x_1=1" /> et <InlineMath math="x_2=\tfrac{1}{2}" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 4</summary><div className="answer__content"><p>
-              <InlineMath math="a-b+c=0" /> donc <InlineMath math="x_1=-1,\ x_2=-\tfrac{c}{a}=-\tfrac{1}{2}" />.
-            </p></div></details></li>
+              Autre astuce: si <InlineMath math="a-b+c=0" />, alors <InlineMath math="x=-1" /> est racine et l’autre vaut <InlineMath math="-\tfrac{c}{a}" />.</p>
+              <p>Ici <InlineMath math="2-3+1=0" /> donc <InlineMath math="x_1=-1" /> et <InlineMath math="x_2=-\tfrac{1}{2}" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 5</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=(-6)^2-4\cdot3\cdot2=36-24=12" />, racines <InlineMath math="\tfrac{6\pm\sqrt{12}}{6}=\tfrac{3\pm\sqrt{3}}{3}" />.
-            </p></div></details></li>
+              <InlineMath math="a=3,\ b=-6,\ c=2" />. <InlineMath math="\Delta=36-24=12" />.</p>
+              <p>Racines: <InlineMath math="x=\tfrac{6\pm\sqrt{12}}{6}=\tfrac{6\pm2\sqrt3}{6}=\tfrac{3\pm\sqrt3}{3}" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 6</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=16-32=-16<0" /> pas de solution réelle.
-            </p></div></details></li>
+              <InlineMath math="a=1,\ b=4,\ c=8" />. <InlineMath math="\Delta=16-32=-16<0" /> donc aucune solution réelle.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 7</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=1+24=25" />, racines <InlineMath math="x=\tfrac{-1\pm5}{-4}\Rightarrow x=-\tfrac{1}{2},\ 3" />.
-            </p></div></details></li>
+              <InlineMath math="a=-2,\ b=1,\ c=3" />. <InlineMath math="\Delta=1-4(-2)\cdot3=25" />.</p>
+              <p>Racines: <InlineMath math="x=\tfrac{-1\pm5}{-4}\Rightarrow x=-\tfrac12,\ 3" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 8</summary><div className="answer__content"><p>
-              Factorisation: <InlineMath math="(x-2)(x-3)=0\Rightarrow x=2,3" />.
-            </p></div></details></li>
+              Factoriser: <InlineMath math="x^2-5x+6=(x-2)(x-3)" /> donc <InlineMath math="x=2" /> ou <InlineMath math="x=3" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 9</summary><div className="answer__content"><p>
-              <InlineMath math="f(1)=0" />; ensuite <InlineMath math="(x-1)(x-2)=0\Rightarrow x=1,2" />.
-            </p></div></details></li>
+              Vérification: <InlineMath math="f(1)=1-3+2=0" /> donc <InlineMath math="(x-1)" /> est facteur; division donne <InlineMath math="(x-1)(x-2)=0" />, ainsi <InlineMath math="x=1,2" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 10</summary><div className="answer__content"><p>
-              <InlineMath math="\Delta=(-4)^2-4(-1)(-4)=16-16=0" />, racine double <InlineMath math="x=\tfrac{-(-4)}{2(-1)}=-2" />.
-            </p></div></details></li>
+              <InlineMath math="a=-1,\ b=-4,\ c=-4" />. <InlineMath math="\Delta=16-16=0" /> donc racine double en <InlineMath math="x=\tfrac{-b}{2a}=-2" />.</p>
+            </div></details></li>
           </ol>
         </div>
       </section>
     </div>
   );
 }
-

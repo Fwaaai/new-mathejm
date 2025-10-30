@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section9() {
@@ -48,7 +48,8 @@ export default function Section9() {
                   <summary>Exercice {i + 1}</summary>
                   <div className="answer__content">
                     <p>
-                      Axe <InlineMath math={it.axis} />.
+                      De la forme canonique <InlineMath math="f(x)=a(x-\alpha)^2+\beta" />, l’axe de symétrie est
+                      toujours la droite <InlineMath math="x=\alpha" />. Ici donc: <InlineMath math={it.axis} />.
                     </p>
                   </div>
                 </details>
@@ -60,4 +61,3 @@ export default function Section9() {
     </div>
   );
 }
-

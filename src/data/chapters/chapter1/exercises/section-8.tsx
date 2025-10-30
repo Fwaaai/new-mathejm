@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section8() {
@@ -40,6 +40,9 @@ export default function Section8() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: pour <InlineMath math="f(x)=a(x-\alpha)^2+\beta" />, le sommet est <InlineMath math="S(\alpha,\beta)" /> par lecture directe.
+          </p>
           <ol className="answer-list">
             {[
               'S(2,9)',
@@ -57,9 +60,8 @@ export default function Section8() {
                 <details className="answer__details">
                   <summary>Exercice {i + 1}</summary>
                   <div className="answer__content">
-                    <p>
-                      <InlineMath math={ans} />
-                    </p>
+                    <p>Lecture directe: on lit <InlineMath math={'(\\alpha,\\beta)'} /> dans l’expression canonique.</p>
+                    <p><InlineMath math={ans} /></p>
                   </div>
                 </details>
               </li>
@@ -70,4 +72,3 @@ export default function Section8() {
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section10() {
@@ -48,7 +48,12 @@ export default function Section10() {
                   <summary>Exercice {i + 1}</summary>
                   <div className="answer__content">
                     <p>
-                      <InlineMath math={it.roots} />
+                      Méthode: résoudre <InlineMath math={it.expr.replace('f(x)=','')} /> = <InlineMath math="0" /> revient à
+                      écrire <InlineMath math="a(x-\alpha)^2+\beta=0" /> donc <InlineMath math="(x-\alpha)^2=-\tfrac{\beta}{a}" />.
+                      Il y a des racines réelles si et seulement si <InlineMath math="-\tfrac{\beta}{a}\ge0" />.
+                    </p>
+                    <p>
+                      Réponse: <InlineMath math={it.roots} />.
                     </p>
                   </div>
                 </details>
@@ -60,4 +65,3 @@ export default function Section10() {
     </div>
   );
 }
-

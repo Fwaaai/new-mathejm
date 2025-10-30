@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 import graph11 from '/src/assets/img/graphs/graph11.png';
 import graph12 from '/src/assets/img/graphs/graph12.png';
@@ -56,6 +56,10 @@ export default function Section14() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: par le calcul, utilisez <InlineMath math="\Delta=b^2-4ac" />; graphiquement, lisez les abscisses d’intersection avec l’axe des abscisses
+            (deux, une double, ou aucune selon la courbe).
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p> <InlineMath math="x=-1,\ 5" />.</p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 2</summary><div className="answer__content"><p> <InlineMath math="x=1" /> (double).</p></div></details></li>
@@ -73,4 +77,3 @@ export default function Section14() {
     </div>
   );
 }
-

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 import graph8 from '/src/assets/img/graphs/graph8.png';
 
@@ -54,39 +54,44 @@ export default function Section5() {
         <div className="answers" hidden={hidden}>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
-              <InlineMath math="a<0" /> donc max en <InlineMath math="\alpha=2" />, valeur <InlineMath math="\beta=9" />; décroît puis croît vers la gauche/droite inversé? Pour <InlineMath math="a<0" />, croît sur <InlineMath math="(-\infty,2]" />, décroît sur <InlineMath math="[2,+\infty)" />.
-            </p></div></details></li>
+              <InlineMath math="a=-1<0" />: parabole tournée vers le bas, extremum = maximum.
+              <InlineMath math="\alpha=-\tfrac{b}{2a}=-\tfrac{4}{2(-1)}=2" />, <InlineMath math="\beta=f(2)=-4+8+5=9" />.</p>
+              <p>Variations: croissante sur <InlineMath math="(-\infty,2]" />, décroissante sur <InlineMath math="[2,+\infty)" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 2</summary><div className="answer__content"><p>
-              <InlineMath math="a>0" /> donc min en <InlineMath math="\alpha=-2" />, valeur <InlineMath math="\beta=1" />; décroît sur <InlineMath math="(-\infty,-2]" />, croît sur <InlineMath math="[-2,+\infty)" />.
-            </p></div></details></li>
+              <InlineMath math="a=1>0" />: parabole vers le haut, extremum = minimum.
+              <InlineMath math="\alpha=-\tfrac{4}{2}= -2" />, <InlineMath math="\beta=f(-2)=4-8+5=1" />.</p>
+              <p>Variations: décroissante sur <InlineMath math="(-\infty,-2]" />, croissante sur <InlineMath math="[-2,+\infty)" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 3</summary><div className="answer__content"><p>
-              <InlineMath math="\alpha=\tfrac{8}{4}=2" />, <InlineMath math="\beta=f(2)=2\cdot4-16+1=-7" />, min <InlineMath math="-7" /> car <InlineMath math="a=2>0" />.
-            </p></div></details></li>
+              <InlineMath math="\alpha=\tfrac{8}{4}=2" />, <InlineMath math="\beta=f(2)=8-16+1=-7" />.
+              Comme <InlineMath math="a=2>0" />, il s’agit d’un minimum <InlineMath math="-7" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 4</summary><div className="answer__content"><p>
-              <InlineMath math="a<0" /> donc croît sur <InlineMath math="(-\infty, -1]" /> puis décroît; max en <InlineMath math="x=-1" />.
-            </p></div></details></li>
+              <InlineMath math="a=-3<0" />. <InlineMath math="\alpha=-\tfrac{-6}{2(-3)}=-1" />, <InlineMath math="\beta=f(-1)=-3+6+2=5" />.</p>
+              <p>Variations: croît sur <InlineMath math="(-\infty,-1]" />, décroît sur <InlineMath math="[-1,+\infty)" />. Maximum 5.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 5</summary><div className="answer__content"><p>
-              <InlineMath math="a=\tfrac12>0" /> donc décroît sur <InlineMath math="(-\infty,1]" />, croît sur <InlineMath math="[1,+\infty)" />.
-            </p></div></details></li>
+              <InlineMath math="a=\tfrac12>0" />. <InlineMath math="\alpha=-\tfrac{-1}{1}=1" />. Décroît sur <InlineMath math="(-\infty,1]" /> puis croît; minimum en <InlineMath math="x=1" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 6</summary><div className="answer__content"><p>
-              <InlineMath math="(2x+1)^2" /> min en <InlineMath math="x=-\tfrac12" /> de valeur <InlineMath math="0" />.
-            </p></div></details></li>
+              Reconnaître <InlineMath math="4x^2+4x+1=(2x+1)^2" />. Minimum 0 atteint en <InlineMath math="x=-\tfrac12" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 7</summary><div className="answer__content"><p>
-              <InlineMath math="a<0" /> donc maximum en <InlineMath math="\alpha=2" />, valeur <InlineMath math="\beta=5" />.
-            </p></div></details></li>
+              <InlineMath math="a=-2<0" /> donc maximum. <InlineMath math="\alpha=-\tfrac{8}{-4}=2" />, <InlineMath math="\beta=f(2)=-8+16-3=5" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 8</summary><div className="answer__content"><p>
-              <InlineMath math="(x-5)^2" /> min en <InlineMath math="x=5" />; décroît puis croît.
-            </p></div></details></li>
+              <InlineMath math="x^2-10x+25=(x-5)^2" />: minimum 0 en <InlineMath math="x=5" />; décroît sur <InlineMath math="(-\infty,5]" />, croît sur <InlineMath math="[5,+\infty)" />.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 9</summary><div className="answer__content"><p>
-              <InlineMath math="a>0" /> donc décroît jusqu’à <InlineMath math="x=-2" />, puis croît; min <InlineMath math="1" />.
-            </p></div></details></li>
+              Lecture graphique: <InlineMath math="a>0" />, sommet <InlineMath math="S(-2,1)" />. Décroît jusqu’à <InlineMath math="x=-2" />, croît ensuite; minimum 1.</p>
+            </div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 10</summary><div className="answer__content"><p>
-              <InlineMath math="a<0" /> donc extremum est un maximum.
-            </p></div></details></li>
+              <InlineMath math="a=-1<0" />: l’extremum est un maximum (sans calcul détaillé).</p>
+            </div></details></li>
           </ol>
         </div>
       </section>
     </div>
   );
 }
-

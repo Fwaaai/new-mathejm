@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 
 export default function Section16() {
@@ -50,6 +50,10 @@ export default function Section16() {
         </div>
 
         <div className="answers" hidden={hidden}>
+          <p>
+            Méthode: connaître une racine <InlineMath math="r" /> permet de factoriser par <InlineMath math="(x-r)" /> (division euclidienne ou schéma de Ruffini),
+            puis factoriser le quotient du second degré (discriminant ou identités) pour compléter.
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
               <InlineMath math="(x-3)(2x^2+3x-2)=(x-3)(2x-1)(x+2)" />.
@@ -87,4 +91,3 @@ export default function Section16() {
     </div>
   );
 }
-

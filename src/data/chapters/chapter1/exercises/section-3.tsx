@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 import graph7 from '/src/assets/img/graphs/graph7.png';
 export default function Section3() {
@@ -52,42 +52,47 @@ export default function Section3() {
         </div>
 
         <div className="answers" hidden={hidden}>
-          <p>L’axe est <InlineMath math="x=\alpha" /> avec <InlineMath math="\alpha=-\tfrac{b}{2a}" />.</p>
+          <p>
+            Rappel de méthode: pour <InlineMath math="f(x)=ax^2+bx+c" />, l’abscisse du sommet est
+            <InlineMath math="\alpha=-\tfrac{b}{2a}" /> et l’axe de symétrie est la droite verticale
+            <InlineMath math="x=\alpha" />. Depuis la forme canonique <InlineMath math="f(x)=a(x-\alpha)^2+\beta" />, l’axe est
+            immédiatement <InlineMath math="x=\alpha" />.
+          </p>
           <ol className="answer-list">
             <li className="answer"><details className="answer__details"><summary>Exercice 1</summary><div className="answer__content"><p>
-              <InlineMath math="a=-1,\ b=6" /> donc <InlineMath math="\alpha=3" />, axe <InlineMath math="x=3" />.
+              <InlineMath math="a=-1,\ b=6" />. Calcul: <InlineMath math="\alpha=-\tfrac{b}{2a}=-\tfrac{6}{2(-1)}=3" />.
+              Axe de symétrie: <InlineMath math="x=3" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 2</summary><div className="answer__content"><p>
-              <InlineMath math="a=2,\ b=-4" /> donc <InlineMath math="\alpha=1" />, axe <InlineMath math="x=1" />.
+              <InlineMath math="a=2,\ b=-4" />. <InlineMath math="\alpha=-\tfrac{-4}{2\cdot2}=1" />. Axe <InlineMath math="x=1" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 3</summary><div className="answer__content"><p>
-              <InlineMath math="a=-\tfrac12,\ b=-1" /> donc <InlineMath math="\alpha= -\tfrac{-1}{2(-\tfrac12)} = 1" />, axe <InlineMath math="x=1" />.
+              <InlineMath math="a=-\tfrac12,\ b=-1" />. <InlineMath math="\alpha=-\tfrac{-1}{2(-\tfrac12)}=1" />. Axe <InlineMath math="x=1" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 4</summary><div className="answer__content"><p>
-              <InlineMath math="a=5,\ b=20" /> donc <InlineMath math="\alpha= -\tfrac{20}{10}=-2" />, axe <InlineMath math="x=-2" />.
+              <InlineMath math="a=5,\ b=20" />. <InlineMath math="\alpha=-\tfrac{20}{10}=-2" />. Axe <InlineMath math="x=-2" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 5</summary><div className="answer__content"><p>
-              <InlineMath math="a=-3,\ b=12" /> donc <InlineMath math="\alpha= -\tfrac{12}{-6}=2" />, axe <InlineMath math="x=2" />.
+              <InlineMath math="a=-3,\ b=12" />. <InlineMath math="\alpha=-\tfrac{12}{-6}=2" />. Axe <InlineMath math="x=2" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 6</summary><div className="answer__content"><p>
-              <InlineMath math="a=1,\ b=6" /> donc <InlineMath math="\alpha=-3" />, axe <InlineMath math="x=-3" />.
+              <InlineMath math="a=1,\ b=6" />. <InlineMath math="\alpha=-3" />. Axe <InlineMath math="x=-3" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 7</summary><div className="answer__content"><p>
-              <InlineMath math="a=-4,\ b=-8" /> donc <InlineMath math="\alpha=-\tfrac{-8}{-8}=-1" />, axe <InlineMath math="x=-1" />.
+              <InlineMath math="a=-4,\ b=-8" />. <InlineMath math="\alpha=-\tfrac{-8}{-8}=-1" />. Axe <InlineMath math="x=-1" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 8</summary><div className="answer__content"><p>
-              Axe <InlineMath math="x=-3" />.
+              Sommet d’abscisse <InlineMath math="-3" />. Axe <InlineMath math="x=-3" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 9</summary><div className="answer__content"><p>
-              <InlineMath math="x=2" /> (lecture graphique).
+              Lecture graphique: abscisse du sommet <InlineMath math="2" />. Axe <InlineMath math="x=2" />.
             </p></div></details></li>
             <li className="answer"><details className="answer__details"><summary>Exercice 10</summary><div className="answer__content"><p>
-              <InlineMath math="\alpha=-\tfrac{b}{2a}=-\tfrac{-6}{2}=3" />, axe <InlineMath math="x=3" />.
+              Données <InlineMath math="a=1,\ b=-6" />. <InlineMath math="\alpha=-\tfrac{-6}{2}=3" />. Axe <InlineMath math="x=3" />.
             </p></div></details></li>
           </ol>
         </div>
       </section>
     </div>
   );
-}
-
+};

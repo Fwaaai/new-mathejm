@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 
 import { InlineMath } from 'react-katex';
 
@@ -96,8 +96,8 @@ export default function Section1() {
         </div>
         <div className="answers" hidden={hidden}>
           <p>
-            Cliquez sur l’exercice de votre choix pour dérouler le corrigé avec
-            la démarche complète.
+            Corrigés détaillés: identité(s) utilisée(s), calculs intermédiaires, justification du signe et
+            vérifications rapides pour sécuriser les résultats.
           </p>
           <ol className="answer-list">
             <li className="answer">
@@ -109,6 +109,10 @@ export default function Section1() {
                     En multipliant par <InlineMath math="3" /> on obtient <InlineMath math="3x^2 - 12x + 12" />. On
                     ajoute ensuite la constante <InlineMath math="4" />, ce qui donne <InlineMath math="f(x) = 3x^2 - 12x + 16" />. Ainsi <InlineMath math="a = 3" />, <InlineMath math="b = -12" /> et <InlineMath math="c = 16" />.
                   </p>
+                  <p>
+                    Remarque pédagogique: rappeler aux élèves de citer l’identité remarquable utilisée et de
+                    vérifier la cohérence du signe de <InlineMath math="b" /> (ici négatif car la translation est vers la droite).
+                  </p>
                 </div>
               </details>
             </li>
@@ -118,6 +122,10 @@ export default function Section1() {
                 <div className="answer__content">
                   <p>
                     On développe <InlineMath math="(x + 3)(x - 5) = x^2 - 5x + 3x - 15 = x^2 - 2x - 15" />. En multipliant par <InlineMath math="-2" />, on obtient <InlineMath math="g(x) = -2x^2 + 4x + 30" />.
+                  </p>
+                  <p>
+                    Démarche: détailler les quatre produits (FOIL), réduire, puis distribuer le facteur <InlineMath math="-2" />.
+                    Vérifier le sens d’ouverture (<InlineMath math="a<0" />) et la cohérence numérique de <InlineMath math="c" />.
                   </p>
                 </div>
               </details>
@@ -130,6 +138,10 @@ export default function Section1() {
                     On développe d’abord <InlineMath math="(x - 4)(x - 1) = x^2 - x - 4x + 4 = x^2 - 5x + 4" />. En multipliant par <InlineMath math="\dfrac{1}{2}" /> on obtient
                     <InlineMath math="\dfrac{1}{2}x^2 - \dfrac{5}{2}x + 2" />. Enfin on ajoute <InlineMath math="3" /> :
                     <InlineMath math={String.raw`h(x) = \dfrac{1}{2}x^2 - \dfrac{5}{2}x + 5`} />.
+                  </p>
+                  <p>
+                    Astuce: conserver les fractions sous forme rationnelle (<InlineMath math="\tfrac{5}{2}" />) et ne pas mélanger
+                    décimaux et fractions pour limiter les erreurs d’arrondi.
                   </p>
                 </div>
               </details>
@@ -144,6 +156,10 @@ export default function Section1() {
                     s’annulent et il reste <InlineMath math="4x - (-6x) + 4 - 9 = 10x - 5" />. On
                     obtient donc <InlineMath math="p(x) = 10x - 5" />.
                   </p>
+                  <p>
+                    Variante experte: utiliser <InlineMath math="A^2-B^2=(A-B)(A+B)" /> avec <InlineMath math="A=x+2" />, <InlineMath math="B=x-3" />.
+                    On obtient directement <InlineMath math="5(2x-1)=10x-5" />.
+                  </p>
                 </div>
               </details>
             </li>
@@ -155,6 +171,10 @@ export default function Section1() {
                     On calcule <InlineMath math="(x - 1)^2 = x^2 - 2x + 1" />. Après multiplication
                     par <InlineMath math="5" />, on obtient <InlineMath math="5x^2 - 10x + 5" />. En retranchant <InlineMath math="7" /> on
                     aboutit à <InlineMath math="q(x) = 5x^2 - 10x - 2" />.
+                  </p>
+                  <p>
+                    Contrôle: identifier visuellement <InlineMath math="a=5" /> (ouverture vers le haut), <InlineMath math="b=-10" /> (sommet décalé à droite),
+                    et constante <InlineMath math="c=-2" />.
                   </p>
                 </div>
               </details>

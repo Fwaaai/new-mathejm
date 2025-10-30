@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { InlineMath } from 'react-katex';
 import graph6 from '/src/assets/img/graphs/graph6.png';
 
@@ -95,58 +95,67 @@ export default function Section2() {
 
         <div className="answers" hidden={hidden}>
           <p>
-            Utilisez <InlineMath math="\alpha = -\tfrac{b}{2a}" /> puis
-            <InlineMath math="\beta = f(\alpha)" />.
+            Méthode commune: pour <InlineMath math="f(x)=ax^2+bx+c" />, on calcule
+            <InlineMath math="\alpha=-\tfrac{b}{2a}" /> puis <InlineMath math="\beta=f(\alpha)" />. On peut aussi compléter le carré
+            pour retrouver la forme canonique <InlineMath math="a(x-\alpha)^2+\beta" />.
           </p>
           <ol className="answer-list">
             <li className="answer">
               <details className="answer__details"><summary>Exercice 1</summary><div className="answer__content">
-                <p><InlineMath math="a=-1,\ b=6" /> donc <InlineMath math="\alpha = -\tfrac{6}{2(-1)} = 3" /> et <InlineMath math="\beta=f(3)= -9+18-5=4" />. <InlineMath math="S(3,4)" />.</p>
+                <p><InlineMath math="a=-1,\ b=6,\ c=-5" />. <InlineMath math="\alpha = -\tfrac{6}{2(-1)} = 3" />.</p>
+                <p><InlineMath math="\beta=f(3)=-3^2+6\cdot3-5=-9+18-5=4" />. Donc <InlineMath math="S(3,4)" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 2</summary><div className="answer__content">
-                <p><InlineMath math="a=3,\ b=-12" /> donc <InlineMath math="\alpha = -\tfrac{-12}{2\cdot3}=2" /> et <InlineMath math="\beta=f(2)=3(4)-24+11= -1" />. <InlineMath math="S(2,-1)" />.</p>
+                <p><InlineMath math="a=3,\ b=-12,\ c=11" />. <InlineMath math="\alpha = \tfrac{12}{6}=2" />.</p>
+                <p><InlineMath math="\beta=f(2)=3\cdot4-24+11=-1" />. Donc <InlineMath math="S(2,-1)" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 3</summary><div className="answer__content">
-                <p><InlineMath math="a=2,\ b=8" /> donc <InlineMath math="\alpha=-\tfrac{8}{4}=-2" /> et <InlineMath math="\beta=f(-2)=8-16-1=-9" />. <InlineMath math="S(-2,-9)" />.</p>
+                <p><InlineMath math="a=2,\ b=8,\ c=-1" />. <InlineMath math="\alpha=-\tfrac{8}{4}=-2" />.</p>
+                <p><InlineMath math="\beta=f(-2)=2\cdot4+8(-2)-1=8-16-1=-9" />. Donc <InlineMath math="S(-2,-9)" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 4</summary><div className="answer__content">
-                <p><InlineMath math="a=-2,\ b=-4" /> donc <InlineMath math="\alpha=-\tfrac{-4}{-4}= -1" /> et <InlineMath math="\beta=f(-1)= -2+4+3=5" />. <InlineMath math="S(-1,5)" />.</p>
+                <p><InlineMath math="a=-2,\ b=-4,\ c=3" />. <InlineMath math="\alpha=-\tfrac{-4}{2(-2)}=-1" />.</p>
+                <p><InlineMath math="\beta=f(-1)=-2\cdot1-4(-1)+3=-2+4+3=5" />. Donc <InlineMath math="S(-1,5)" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 5</summary><div className="answer__content">
-                <p><InlineMath math="a=1,\ b=-10" /> donc <InlineMath math="\alpha= -\tfrac{-10}{2}=5" /> et <InlineMath math="\beta=f(5)=25-50+29=4" />. <InlineMath math="S(5,4)" />.</p>
+                <p><InlineMath math="a=1,\ b=-10,\ c=29" />. <InlineMath math="\alpha=5" />, <InlineMath math="\beta=f(5)=25-50+29=4" />. Donc <InlineMath math="S(5,4)" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 6</summary><div className="answer__content">
-                <p><InlineMath math="a=-\tfrac12,\ b=3" /> donc <InlineMath math="\alpha = -\tfrac{3}{2(-\tfrac12)}=3" /> et <InlineMath math="\beta=f(3)= -\tfrac12\cdot9+9-2=2.5" />. <InlineMath math="S(3,\tfrac{5}{2})" />.</p>
+                <p><InlineMath math="a=-\tfrac12,\ b=3,\ c=-2" />. <InlineMath math="\alpha = -\tfrac{3}{2(-\tfrac12)}=3" />.</p>
+                <p><InlineMath math="\beta=f(3)=-\tfrac12\cdot9+9-2=\tfrac{5}{2}" />. Donc <InlineMath math="S(3,\tfrac{5}{2})" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 7</summary><div className="answer__content">
-                <p><InlineMath math="a=4,\ b=-4" /> donc <InlineMath math="\alpha= -\tfrac{-4}{8}=\tfrac12" /> et <InlineMath math="\beta=f(\tfrac12)=4\cdot\tfrac14-2+7=6" />. <InlineMath math="S(\tfrac12,6)" />.</p>
+                <p><InlineMath math="a=4,\ b=-4,\ c=7" />. <InlineMath math="\alpha=\tfrac{1}{2}" />.</p>
+                <p><InlineMath math="\beta=f(\tfrac12)=4\cdot\tfrac14-2+7=6" />. Donc <InlineMath math="S(\tfrac12,6)" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 8</summary><div className="answer__content">
-                <p><InlineMath math="a=-3,\ b=2" /> donc <InlineMath math="\alpha= -\tfrac{2}{-6}=\tfrac13" /> et <InlineMath math="\beta=f(\tfrac13)= -3\cdot\tfrac19 + \tfrac{2}{3} + 1 = \tfrac{10}{9}" />. <InlineMath math="S(\tfrac13,\tfrac{10}{9})" />.</p>
+                <p><InlineMath math="a=-3,\ b=2,\ c=1" />. <InlineMath math="\alpha=\tfrac{1}{3}" />.</p>
+                <p><InlineMath math="\beta=f(\tfrac13)=-3\cdot\tfrac19+\tfrac{2}{3}+1=\tfrac{10}{9}" />. Donc <InlineMath math="S(\tfrac13,\tfrac{10}{9})" />.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 9</summary><div className="answer__content">
-                <p>Lecture graphique: <InlineMath math="S(-1,4)" /> (approx.).</p>
+                <p>Lecture graphique (sommet le plus haut): <InlineMath math="S(-1,4)" /> environ; vérifier abscisse au milieu des zéros si visibles.</p>
               </div></details>
             </li>
             <li className="answer">
               <details className="answer__details"><summary>Exercice 10</summary><div className="answer__content">
-                <p>On peut écrire <InlineMath math="f(x)=a(x-3)^2-2" /> pour un certain <InlineMath math="a\neq0" />. Par exemple <InlineMath math="a=1" /> donne <InlineMath math="f(x)=(x-3)^2-2" />.</p>
+                <p>Sommet imposé <InlineMath math="S(3,-2)" />: la forme canonique est <InlineMath math="f(x)=a(x-3)^2-2" /> avec <InlineMath math="a\neq0" />.</p>
+                <p>Exemple possible: <InlineMath math="a=1" /> donc <InlineMath math="f(x)=(x-3)^2-2" />; toute valeur de <InlineMath math="a" /> conserve le même sommet.</p>
               </div></details>
             </li>
           </ol>
@@ -155,4 +164,3 @@ export default function Section2() {
     </div>
   );
 }
-
