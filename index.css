@@ -4,12 +4,25 @@
   --color-background: #f5f6fb;
   --color-text: #1b1b23;
   --color-muted: #616174;
-  --color-accent: #2f3cbe;
-  --color-border: rgba(47, 60, 190, 0.12);
+  --color-accent: #5060ff;
+  --color-border: rgba(80, 96, 255, 0.12);
   --color-surface: #ffffff;
 }
 
+/* Dark theme overrides using data attribute on <html> */
+:root[data-theme="dark"] {
+  --color-background: #0f1121;
+  --color-text: #e7e8ee;
+  --color-muted: #a3a7c2;
+  --color-accent: #5060ff; /* brighter accent for contrast */
+  --color-border: rgba(80, 96, 255, 0.25);
+  --color-surface: #17192d;
+}
+
 @layer base {
+  body {
+    @apply bg-background text-text;
+  }
   ol {
     list-style-position: outside;
     margin-left: 1.5rem;
@@ -18,7 +31,7 @@
 
 @layer components {
   .sidebar-item {
-    @apply no-underline font-medium px-4 py-3 rounded-xl text-text bg-[rgba(47,60,190,0.06)] transition hover:bg-[rgba(47,60,190,0.16)] hover:text-accent focus:bg-[rgba(47,60,190,0.16)] focus:text-accent outline-none;
+    @apply no-underline font-medium px-4 py-3 rounded-xl text-text bg-[rgba(80,96,255,0.06)] transition hover:bg-[rgba(80,96,255,0.16)] hover:text-accent focus:bg-[rgba(80,96,255,0.16)] focus:text-accent outline-none;
   }
   /* Make KaTeX BlockMath scroll horizontally if wider than container */
   .katex-display {
@@ -47,13 +60,13 @@
     @apply flex items-center gap-2 text-sm text-muted mt-6;
   }
   .prim-btn {
-    @apply self-start inline-flex items-center justify-center rounded-full bg-accent text-white font-semibold no-underline shadow-[0_16px_32px_rgba(47,60,190,0.35)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_44px_rgba(47,60,190,0.4)] focus:-translate-y-0.5 focus:shadow-[0_22px_44px_rgba(47,60,190,0.4)];
+    @apply self-start inline-flex items-center justify-center rounded-full bg-accent text-white font-semibold no-underline shadow-[0_16px_32px_rgba(80,96,255,0.35)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_22px_44px_rgba(80,96,255,0.4)] focus:-translate-y-0.5 focus:shadow-[0_22px_44px_rgba(80,96,255,0.4)];
   }
   .scnd-btn {
-    @apply self-start inline-flex items-center justify-center rounded-full border-2 border-[rgba(47,60,190,0.4)] text-accent font-semibold no-underline hover:bg-[rgba(47,60,190,0.08)] focus:bg-[rgba(47,60,190,0.08)];
+    @apply self-start inline-flex items-center justify-center rounded-full border-2 border-[rgba(80,96,255,0.4)] text-accent font-semibold no-underline hover:bg-[rgba(80,96,255,0.08)] focus:bg-[rgba(80,96,255,0.08)];
   }
   .surfaces {
-    @apply mt-14 bg-white p-12 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)] max-w-full lg:w-[860px] ml-16 px-6 pt-16 pb-20 sm:ml-0 sm:px-4 sm:pt-8;
+    @apply mt-14 bg-surface p-12 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)] max-w-full lg:w-[860px] ml-16 px-6 pt-16 pb-20 sm:ml-0 sm:px-4 sm:pt-8;
   }
   .list-1 {
     @apply list-decimal;

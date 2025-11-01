@@ -133,7 +133,7 @@ export default function Section(): React.JSX.Element {
         <p className="intro-lead">{sectionDetails.number} du Chapitre 1</p>
       </header>
 
-      <div className="mt-10 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
+      <div className="mt-10 bg-surface p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
         {/* Section content will go here */}
       </div>
     </main>

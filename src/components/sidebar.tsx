@@ -4,6 +4,22 @@ import { Link, useLocation } from "react-router-dom";
 export default function Sidebar(): React.JSX.Element {
   const location = useLocation();
 
+  const [theme, setTheme] = React.useState<"light" | "dark">(() => {
+    if (typeof window === "undefined") return "light";
+    const stored = localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") return stored;
+    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+    return prefersDark ? "dark" : "light";
+  });
+
+  React.useEffect(() => {
+    const root = document.documentElement;
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
+
   const chapters = [
     {
       title: "Accueil",
@@ -25,7 +41,7 @@ export default function Sidebar(): React.JSX.Element {
         group
         fixed top-0 left-0 bottom-0
         w-[min(300px,80vw)]
-        bg-white
+        bg-surface
         border-r border-border
         shadow-[0_12px_40px_rgba(28,28,44,0.12)]
         translate-x-[calc(-100%+48px)]
@@ -56,7 +72,7 @@ export default function Sidebar(): React.JSX.Element {
           bg-accent text-white font-semibold tracking-wider uppercase
           [writing-mode:vertical-rl]
           rounded-r-lg
-          shadow-[0_8px_24px_rgba(47,60,190,0.35)]
+          shadow-[0_8px_24px_rgba(80,96,255,0.35)]
           cursor-pointer
           max-[720px]:hidden
         "
@@ -74,14 +90,31 @@ export default function Sidebar(): React.JSX.Element {
               to={chapter.link}
               className={`sidebar-item transition-colors ${
                 location.pathname === chapter.link
-                  ? "bg-[rgba(47,60,190,0.08)] text-accent"
-                  : "hover:bg-[rgba(47,60,190,0.04)] hover:text-accent"
+                  ? "bg-[rgba(80,96,255,0.08)] text-accent"
+                  : "hover:bg-[rgba(80,96,255,0.04)] hover:text-accent"
               }`}
             >
               {chapter.title}
             </Link>
           ))}
         </nav>
+      </div>
+
+      {/* Theme toggle */}
+      <div className="mt-auto pt-4 border-t border-border">
+        <button
+          type="button"
+          onClick={toggleTheme}
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-[rgba(80,96,255,0.06)] hover:bg-[rgba(80,96,255,0.16)] text-text focus:outline-none"
+          aria-label={theme === "dark" ? "Passer en thème clair" : "Passer en thème sombre"}
+        >
+          <span aria-hidden>
+            {theme === "dark" ? "☀️" : "🌙"}
+          </span>
+          <span className="font-medium">
+            {theme === "dark" ? "Thème clair (stable)" : "Thème sombre (expérimental)"}
+          </span>
+        </button>
       </div>
     </aside>
   );

@@ -1,6 +1,6 @@
 # Maths EJM (Vite + React + TS)
 
-A small Single‑Page Application (SPA) to host math revision content. Built with Vite, React, TypeScript, Tailwind CSS, and React Router. There is no backend; everything renders client‑side. No cookies or localStorage are used.
+A small Single‑Page Application (SPA) to host math revision content. Built with Vite, React, TypeScript, Tailwind CSS, and React Router. There is no backend; everything renders client‑side. No cookies; localStorage stores theme preference only.
 
 ## Tech Stack
 
@@ -32,6 +32,12 @@ Common scripts:
 - `npm run lint` — run ESLint
 
 The app serves at the URL shown by Vite (typically http://localhost:5173).
+
+## Dark Mode
+
+- A dark theme is available and can be toggled from the sidebar ("Thème sombre/Thème clair").
+- The current preference is saved in `localStorage` under the key `theme` and applied via `data-theme` on `<html>`.
+- Theme tokens are defined in `index.css` using Tailwind v4’s `@theme`, with dark overrides under `:root[data-theme="dark"]`.
 
 ## Project Structure
 

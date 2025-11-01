@@ -9,7 +9,7 @@ export default function Accueil(): React.JSX.Element {
     >
       <Hero />
 
-      <section className="mt-14 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
+      <section className="mt-14 bg-surface p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
         <h2 className="mt-0 mb-4 text-2xl font-semibold">
           Comment utiliser ce site ?
         </h2>
@@ -23,7 +23,7 @@ export default function Accueil(): React.JSX.Element {
         </ul>
       </section>
 
-      <section className="mt-14 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
+      <section className="mt-14 bg-surface p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
         <h2 className="mt-0 mb-4 text-2xl font-semibold">
           À propos des contenus
         </h2>
@@ -35,7 +35,7 @@ export default function Accueil(): React.JSX.Element {
         </p>
       </section>
 
-      <section className="mt-14 bg-white p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
+      <section className="mt-14 bg-surface p-9 rounded-2xl shadow-[0_18px_60px_rgba(31,35,53,0.08)]">
         <h2 className="mt-0 mb-4 text-2xl font-semibold">
           Code source du site
         </h2>
