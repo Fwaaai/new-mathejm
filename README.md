@@ -1,12 +1,12 @@
 # Maths EJM (Vite + React + TS)
 
-A small Single‑Page Application (SPA) to host math revision content. Built with Vite, React, TypeScript, Tailwind CSS, and React Router. There is no backend; everything renders client‑side. No cookies; localStorage stores theme preference only.
+Single‑Page Application (SPA) for maths revision content. Built with Vite, React, TypeScript, Tailwind CSS v4, and React Router. Fully client‑side; no cookies. Theme preference is stored in `localStorage` only.
 
 ## Tech Stack
 
 - React + TypeScript
 - Vite
-- Tailwind CSS (v4) with custom theme tokens
+- Tailwind CSS (v4) via `@tailwindcss/vite` with custom tokens
 - React Router
 - KaTeX via `react-katex` for math rendering
 
@@ -14,7 +14,7 @@ A small Single‑Page Application (SPA) to host math revision content. Built wit
 
 Prerequisites:
 
-- Node.js 18+ (recommended 20+)
+- Node.js 18+ (20+ recommended)
 - npm 9+
 
 Install dependencies and start the dev server:
@@ -26,10 +26,10 @@ npm run dev
 
 Common scripts:
 
-- `npm run dev` — start Vite dev server
-- `npm run build` — type‑check and build for production
-- `npm run preview` — preview the production build
-- `npm run lint` — run ESLint
+- `npm run dev`  Estart Vite dev server
+- `npm run build`  Etype‑check and build for production
+- `npm run preview`  Epreview the production build
+- `npm run lint`  Erun ESLint
 
 The app serves at the URL shown by Vite (typically http://localhost:5173).
 
@@ -43,27 +43,27 @@ The app serves at the URL shown by Vite (typically http://localhost:5173).
 
 ```
 .
-├─ public/                       # Static assets copied as‑is
 ├─ src/
 │  ├─ assets/
 │  │  └─ img/                   # Images used in content
-│  ├─ components/               # Reusable UI (e.g., sidebar, hero)
+│  ├─ components/               # Reusable UI (e.g., sidebar, hero, footer)
 │  ├─ data/                     # Content metadata and chapter files
 │  │  ├─ chapters.ts            # Global chapter metadata (id, slug, title, lead)
 │  │  └─ chapters/
 │  │     ├─ chapter1/
 │  │     │  ├─ index.tsx        # Chapter 1 index page (list of sections)
 │  │     │  ├─ sections.ts      # Chapter 1 sections metadata (slugs, labels)
-│  │     │  ├─ exercises/       # Exercises (WIP)
-│  │     │  └─ sections/
-│  │     │     ├─ section-1.tsx # Section components (non‑padded numbers)
-│  │     │     └─ ...
+│  │     │  ├─ sections/        # Section components (non‑padded numbers)
+│  │     │  └─ exercises/       # Exercise components (non‑padded numbers)
 │  │     └─ chapter2/
-│  │        └─ index.tsx        # Placeholder
-│  ├─ pages/                    # Route components (Accueil, ChapterPage, NotFound, etc.)
+│  │        ├─ index.tsx
+│  │        ├─ sections.ts
+│  │        ├─ sections/
+│  │        └─ exercises/
+│  ├─ pages/                    # Routes: Accueil, ChapterPage, SectionPage, ExercisePage, NotFound
 │  ├─ utils/
-│  │  ├─ loaders/               # Dynamic import helpers (chapters/sections)
-│  │  └─ renderers/             # Async renderers that use the loaders
+│  │  ├─ loaders/               # Dynamic import helpers (chapters/sections/exercises)
+│  │  └─ renderers/             # Renderers that use the loaders
 │  ├─ App.tsx                   # Routes and layout
 │  └─ main.tsx                  # App bootstrap
 ├─ index.css                    # Tailwind layer + theme tokens
@@ -74,12 +74,12 @@ The app serves at the URL shown by Vite (typically http://localhost:5173).
 
 ## Routing
 
-- `/` — Accueil (home)
-- `/chapitres/:chapterId` — Chapter page; `:chapterId` is a slug (e.g., `chapitre-1`)
-- `/chapitres/:chapterId/sections/:sectionId` — Section page; `:sectionId` is a slug (e.g., `section-01`)
-- `/chapitres/:chapterId/exercices/:exerciseId` — Exercise page (WIP)
+- `/`  EAccueil (home)
+- `/chapitres/:chapterId`  EChapter page; `:chapterId` is a slug (e.g., `chapitre-1`)
+- `/chapitres/:chapterId/sections/:sectionId`  ESection page; `:sectionId` is a slug (e.g., `section-01`)
+- `/chapitres/:chapterId/exercices/:sectionId`  EExercises page for a section
 
-Chapter and section metadata live under `src/data`. Chapter pages use `chapters.ts` to look up the chapter by its `slug`.
+Metadata lives under `src/data`. Chapter pages use `src/data/chapters.ts` to look up a chapter by `slug`.
 
 ## Content Model and Conventions
 
@@ -98,14 +98,13 @@ Important: slugs are zero‑padded (e.g., `section-01`), but filenames are not (
 
 ### Dynamic Loading (by Convention)
 
-The app includes helpers that lazy‑load chapter and section components using `import.meta.glob` patterns:
+Helpers lazy‑load content using `import.meta.glob` patterns:
 
-- Chapters: `src/utils/loaders/chapterLoader.ts` matches `src/data/chapters/chapter*/index.tsx`
-- Sections: `src/utils/loaders/sectionLoader.ts` matches `src/data/chapters/chapter*/sections/section-*.tsx`
+- Chapters: `src/utils/loaders/chapterLoader.ts` → `src/data/chapters/chapter*/index.tsx`
+- Sections: `src/utils/loaders/sectionLoader.ts` → `src/data/chapters/chapter*/sections/section-*.tsx`
+- Exercises: `src/utils/loaders/exerciseLoader.ts` → `src/data/chapters/chapter*/exercises/section-*.tsx`
 
-Renderers in `src/utils/renderers/` resolve components at runtime given a numeric chapter/section (derived from metadata `id`) and show a loading or not‑found state accordingly.
-
-Note: The route‑level `pages/sectionPage.tsx` uses slugs from the chapter’s `sections.ts` but renders content via the numeric dynamic loader/renderer. Chapter 2 is currently a placeholder.
+Renderers in `src/utils/renderers/` map numeric `chapterNumber`/`sectionNumber` to components and handle loading/not‑found states. Route pages (`src/pages/sectionPage.tsx`, `src/pages/exercisePage.tsx`) resolve slugs to metadata, then delegate to the renderers.
 
 ### Adding a New Chapter
 
@@ -117,10 +116,16 @@ Note: The route‑level `pages/sectionPage.tsx` uses slugs from the chapter’s 
 
 ### Adding a New Section
 
-1. Under the chapter folder, add a file named `src/data/chapters/chapterN/sections/section-X.tsx` where `X` is your section number without leading zeros (e.g., `section-1.tsx`).
+1. Under the chapter folder, add `src/data/chapters/chapterN/sections/section-X.tsx` where `X` is your section number without leading zeros (e.g., `section-1.tsx`).
 2. If using metadata‑driven navigation (Chapter 1 style), add an entry to that chapter’s `sections.ts` with:
    - `id` (string), `slug` (e.g., `section-01`), `number` (label), `title` (display)
 3. Ensure your routes link to `/chapitres/chapitre-N/sections/<section-slug>` (e.g., `/chapitres/chapitre-1/sections/section-01`).
+
+### Adding Exercises for a Section
+
+1. Under the chapter folder, add `src/data/chapters/chapterN/exercises/section-X.tsx` (same non‑padded `X` rule).
+2. Use the chapter’s `sections.ts` metadata (slug/number/title) for labels and routing.
+3. Link to `/chapitres/chapitre-N/exercices/<section-slug>` (e.g., `/chapitres/chapitre-2/exercices/section-03`).
 
 ## Styling
 
@@ -140,18 +145,19 @@ In components, you can use `react-katex` components like `<InlineMath />` and `<
 
 ## Development Notes
 
-- The site is in French; content strings should remain consistent.
-- The sidebar currently lists a fixed set of chapters; update it if you add new chapters.
+- Site language: French (content and UI strings).
+- Sidebar lists chapters explicitly; update it when adding chapters.
 - If deploying under a subpath (e.g., GitHub Pages), set Vite’s `base` option accordingly.
 
-Known current status:
+Current status snapshot:
 
-- Chapter 2 is a placeholder page.
-- The exercises route renders a stub page for now.
-- `src/pages/section.tsx` exists as a legacy stub and is not wired in the router; the app uses `src/pages/sectionPage.tsx`.
+- Chapter 1: 19 sections + 19 exercise pages implemented.
+- Chapter 2: 14 sections + 14 exercise pages implemented.
+- `src/pages/section.tsx` is a legacy stub (not routed). Use `src/pages/sectionPage.tsx` and `src/pages/exercisePage.tsx`.
 
 ## License
 
 This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0). See `LICENSE` for the full text.
 
 Note: If you run a modified version of this app as a network service, the AGPL requires that you make the corresponding source code available to the users of that service.
+
