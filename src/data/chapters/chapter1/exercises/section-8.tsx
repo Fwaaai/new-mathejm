@@ -14,13 +14,13 @@ export default function Section8() {
           {[
             'f(x)=-(x-2)^2+9',
             'f(x)=2(x+3)^2-5',
-            'f(x)=\tfrac12(x-1)^2+4',
-            'f(x)=3(x-\tfrac12)^2-\tfrac{7}{4}',
+            'f(x)=\\frac12(x-1)^2+4',
+            'f(x)=3(x-\\frac12)^2-\\frac{7}{4}',
             'f(x)=-4(x+2)^2+1',
             'f(x)=(x-5)^2-9',
-            'f(x)=-\tfrac32(x+1)^2+6',
-            'f(x)=\tfrac14(x-8)^2+2',
-            'f(x)=-2(x+\tfrac32)^2+\tfrac12',
+            'f(x)=-\\frac32(x+1)^2+6',
+            'f(x)=\\frac14(x-8)^2+2',
+            'f(x)=-2(x+\\frac32)^2+\\frac12',
             'f(x)=5(x-0)^2-3',
           ].map((expr, i) => (
             <li className="exercise" key={i}>
