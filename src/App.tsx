@@ -6,6 +6,7 @@ import ChapterPage from "./pages/ChapterPage";
 import NotFound from "./pages/NotFound";
 import SectionPage from "./pages/sectionPage";
 import ExercisePage from "./pages/exercisePage";
+import Footer from "./components/footer";
 
 export default function App(): React.JSX.Element {
   return (
@@ -25,6 +26,7 @@ export default function App(): React.JSX.Element {
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        <Footer /> 
       </main>
     </div>
   );

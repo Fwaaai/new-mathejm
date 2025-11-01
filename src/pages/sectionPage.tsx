@@ -2,7 +2,8 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import NotFound from "./NotFound";
 import { getChapterBySlug } from "../data/chapters";
-import { getSectionBySlug } from "../data/chapters/chapter1/sections";
+import { getSectionBySlug as getSectionBySlugCh1 } from "../data/chapters/chapter1/sections";
+import { getSectionBySlug as getSectionBySlugCh2 } from "../data/chapters/chapter2/sections";
 import SectionRenderer from "../utils/renderers/sectionRenderer";
 
 export default function SectionPage(): React.JSX.Element {
@@ -14,7 +15,18 @@ export default function SectionPage(): React.JSX.Element {
   if (!chapterMeta) {
     return <NotFound />;
   }
-  const sectionMeta = getSectionBySlug(sectionId || "");
+  const resolver =
+    chapterMeta.id === "1"
+      ? getSectionBySlugCh1
+      : chapterMeta.id === "2"
+      ? getSectionBySlugCh2
+      : undefined;
+
+  if (!resolver) {
+    return <NotFound />;
+  }
+
+  const sectionMeta = resolver(sectionId || "");
   if (!sectionMeta) {
     return <NotFound />;
   }

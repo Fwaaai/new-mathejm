@@ -9,8 +9,9 @@ export const chaptersMeta = [
   {
     id: "2",
     slug: "chapitre-2",
-    title: "Fonctions affines et linéaires",
-    lead: "Retrouvez ici les sections pour le deuxième chapitre.",
+    title: "Notion de dérivée et équation de la tangente",
+    lead: "Retrouvez ici les 14 sections pour le deuxième chapitre.",
+    length: 14
   },
 ];
 
