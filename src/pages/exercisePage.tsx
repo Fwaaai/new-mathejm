@@ -4,6 +4,7 @@ import NotFound from "./NotFound";
 import { getChapterBySlug } from "../data/chapters";
 import { getSectionBySlug as getSectionBySlugCh1 } from "../data/chapters/chapter1/sections";
 import { getSectionBySlug as getSectionBySlugCh2 } from "../data/chapters/chapter2/sections";
+import { getSectionBySlug as getSectionBySlugCh3 } from "../data/chapters/chapter3/sections";
 import ExerciseRenderer from "../utils/renderers/exerciseRenderer";
 
 export default function ExercisePage(): React.JSX.Element {
@@ -20,6 +21,8 @@ export default function ExercisePage(): React.JSX.Element {
       ? getSectionBySlugCh1
       : chapterMeta.id === "2"
       ? getSectionBySlugCh2
+      : chapterMeta.id === "3"
+      ? getSectionBySlugCh3
       : undefined;
 
   if (!resolver) {

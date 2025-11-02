@@ -13,6 +13,13 @@ export const chaptersMeta = [
     lead: "Retrouvez ici les 14 sections pour le deuxième chapitre.",
     length: 14
   },
+  {
+    id: "3",
+    slug: "chapitre-3",
+    title: "Probabilités conditionnelles et indépendance",
+    lead: "Retrouvez ici les 12 sections pour le troisième chapitre.",
+    length: 11
+  },
 ];
 
 export function getChapterBySlug(slug: string) {

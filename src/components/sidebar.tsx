@@ -33,6 +33,10 @@ export default function Sidebar(): React.JSX.Element {
       title: "Chapitre 2 — Notion de dérivée et équation de la tangente",
       link: "/chapitres/chapitre-2",
     },
+    {
+      title: "Chapitre 3 — Probabilités conditionnelles et indépendance",
+      link: "/chapitres/chapitre-3",
+    },
   ];
   return (
     <aside
