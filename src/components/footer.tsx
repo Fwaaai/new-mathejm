@@ -18,6 +18,7 @@ export default function Footer(): React.JSX.Element {
         <div className="text-[0.9rem]">
           Construit avec React, Vite, Tailwind CSS et KaTeX.
         </div>
+        <Link to="/probleme" className = "hover:text-accent">Des Questions?</Link>
       </div>
     </footer>
   );

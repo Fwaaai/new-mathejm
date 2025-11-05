@@ -7,6 +7,7 @@ import NotFound from "./pages/NotFound";
 import SectionPage from "./pages/sectionPage";
 import ExercisePage from "./pages/exercisePage";
 import Footer from "./components/footer";
+import Problem from "./pages/problem";
 
 export default function App(): React.JSX.Element {
   return (
@@ -24,6 +25,7 @@ export default function App(): React.JSX.Element {
             path="/chapitres/:chapterId/exercices/:sectionId"
             element={<ExercisePage />}
           />
+          <Route path = "/probleme"  element={<Problem />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer /> 

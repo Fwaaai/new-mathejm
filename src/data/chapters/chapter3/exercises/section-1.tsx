@@ -23,9 +23,8 @@ export default function Section1Exercises() {
               Dans un lycée, <InlineMath math={String.raw`P(S)=0{,}55`} /> (sport),
               <InlineMath math={String.raw`P(I)=0{,}35`} /> (instrument) et
               <InlineMath math={String.raw`P(S\cap I)=0{,}20`} />. Calculez
-              <InlineMath math={String.raw`P(S\mid I)`} />,
-              <InlineMath math={String.raw`P(I\mid S)`} /> et
-              <InlineMath math={String.raw`P(S^c\mid I)`} />.
+              <InlineMath math={String.raw`P(S\mid I)`} /> et
+              <InlineMath math={String.raw`P(I\mid S)`} />
             </p>
             {/* TODO: Ajouter un petit diagramme de Venn (rectange/univers avec deux disques S et I) 
                 avec les parts numérotées : S uniquement = 0,35 ; I uniquement = 0,15 ; S∩I = 0,20 ; 
@@ -270,18 +269,13 @@ export default function Section1Exercises() {
                 <summary>Exercice 9</summary>
                 <div className="answer__content">
                   <p>
-                    Sans remise : <InlineMath math={String.raw`P(C\mid A)=\dfrac{4}{8}=\dfrac{1}{2}=0{,}5`} />.
-                    Par symétrie ou par calcul, <InlineMath math={String.raw`P(A\mid C)=\dfrac{5}{8}=0{,}625`} />.
-                  </p>
-                  <p>
-                    Vérification par la définition :
-                  </p>
-                  <BlockMath math={String.raw`\displaystyle P(A\cap C)=\tfrac{5}{9}\times\tfrac{4}{8}=\tfrac{5}{18}`} />
-                  <BlockMath math={String.raw`\displaystyle P(C)=\tfrac{5}{9}`} />
-                  <BlockMath math={String.raw`\displaystyle P(A\mid C)=\dfrac{P(A\cap C)}{P(C)}=\dfrac{5/18}{5/9}=\dfrac{1}{2}`} />
-                  <p>
-                    Oups, les deux valent 1/2 par symétrie (univers conditionnels différents mais mêmes valeurs ici).
-                    Pour contraster, on pouvait définir un autre événement (ex.: « au moins une bleue ») où les valeurs diffèrent.
+                    <InlineMath math={String.raw`P(C \mid A) = \frac{4}{8} = \frac{1}{2}`} /> <br />
+                    <InlineMath
+                      math={String.raw`P(A \mid C) = \frac{P(A \cap C)}{P(C)} = 
+                      \frac{\frac{5}{9}\times\frac{4}{8}}{\frac{5}{9}\times\frac{4}{8}+\frac{4}{9}\times\frac{5}{8}}
+                      = \frac{1}{2}`}
+                    /> <br />
+                    Donc, <InlineMath math={String.raw`P(C \mid A) = P(A \mid C) = \frac{1}{2}`} />.
                   </p>
                 </div>
               </details>
